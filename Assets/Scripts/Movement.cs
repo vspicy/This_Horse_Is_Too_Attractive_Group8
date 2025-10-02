@@ -63,6 +63,7 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void PlayerJump()
     {
+        // gets the key input (space) to jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RaycastHit hit;
