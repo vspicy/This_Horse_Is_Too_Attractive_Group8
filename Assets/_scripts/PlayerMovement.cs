@@ -13,7 +13,11 @@ public class Movement : MonoBehaviour
      */
     
     // Set player speed
-    public float speed;
+    [Header("Speed")]
+    private float speed;
+    public float walkSpeed;
+    public float sprintSpeed;
+    public KeyCode sprintKey = KeyCode.LeftShift;
 
     // Get Rigidbody of the player
     private Rigidbody rigidBody;
@@ -27,11 +31,17 @@ public class Movement : MonoBehaviour
     private bool enableMovement;
 
     // Jumping
+    [Header("Jumping")]
     bool readyToJump = true;
     public KeyCode jumpKey = KeyCode.Space;
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+
+    [Header("Slope")]
+    public float maxSlope;
+    private RaycastHit onSlope;
+    private bool exitSlope;
 
     // Get player orientation
     public Transform orientation;
@@ -43,6 +53,15 @@ public class Movement : MonoBehaviour
   
     // Check if the magnet is currently active
     public bool activeMagnet;
+
+    public MovementStates state;
+
+    public enum MovementStates
+    {
+        walking,
+        sprinting,
+        inAir
+    }
 
     void Start()
     {
@@ -58,6 +77,9 @@ public class Movement : MonoBehaviour
         // Raycast to the ground to tell when the player is grounded
         onGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isGrounded);
 
+        Control();
+        StateHandler();
+
         // apply max speed
         if (onGround && !activeMagnet)
             rigidBody.drag = maxSpeed; // Set maximum Speed of the object
@@ -68,7 +90,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMove();
-        Control();
+        
     }
 
     /// <summary>
@@ -99,9 +121,28 @@ public class Movement : MonoBehaviour
         // Calculate direction of movement
         moveDirection = orientation.forward * vertInput + orientation.right * horzInput; // Always walk in the direction the player
 
+        // On a Slope
+        if (OnSlope() && !exitSlope)
+        {
+            rigidBody.AddForce(GetSlopeMoveDir() * speed * 20f, ForceMode.Force);
+
+            // While traveling upward, force the player towards the ground to prevent bouncing
+            if (rigidBody.velocity.y > 0)
+                rigidBody.AddForce(Vector3.down * 80f, ForceMode.Force);
+        }
+
         // On the ground
         if (onGround)
             rigidBody.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
+
+        // In the air
+        else if (!onGround)
+            rigidBody.AddForce(moveDirection.normalized * speed * 10f * airMultiplier, ForceMode.Force);
+
+        // While not on a slope, turn on the gravity
+        // While on a slope, turn off the gravity
+        rigidBody.useGravity = !OnSlope();
+
         // gets the key input (A) to go left
         /*
         if (Input.GetKey(KeyCode.A))
@@ -130,10 +171,36 @@ public class Movement : MonoBehaviour
     }
 
     /// <summary>
+    /// Handles the current state of the player.
+    /// </summary>
+    private void StateHandler()
+    {
+        // If Sprinting
+        if (onGround && Input.GetKey(sprintKey))
+        {
+            state = MovementStates.sprinting;
+            speed = sprintSpeed;
+        }
+        // If Walking
+        else if (onGround)
+        {
+            state = MovementStates.walking;
+            speed = walkSpeed;
+        }
+        // In Air
+        else
+        {
+            state = MovementStates.inAir;
+        }
+    }
+
+    /// <summary>
     /// The player jumps
     /// </summary>
     private void Jump()
     {
+        exitSlope = true;
+
         // reset y velocity
         rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
 
@@ -143,6 +210,30 @@ public class Movement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+        exitSlope = false;
+    }
+
+    /// <summary>
+    /// Returns value if Player is on a slope
+    /// </summary>
+    /// <returns></returns>
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out onSlope, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, onSlope.normal);
+            return angle < maxSlope && angle != 0; // Return the value of an angle if it is less than the max slope and not equal to 0
+        }
+        return false; // Return nothing if there is no slope
+    }
+
+    /// <summary>
+    /// Project normal move direction on the slope
+    /// </summary>
+    /// <returns></returns>
+    private Vector3 GetSlopeMoveDir()
+    {
+        return Vector3.ProjectOnPlane(moveDirection, onSlope.normal).normalized;
     }
 
     /// <summary>
@@ -150,14 +241,27 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void Control()
     {
-        Vector3 vFlat = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
 
-        //limit when needed
-        if (vFlat.magnitude > speed)
+        // Limit the speed on a slope
+        if (OnSlope() && !exitSlope)
         {
-            Vector3 vLimit = vFlat.normalized * speed;
-            rigidBody.velocity = new Vector3(vLimit.x, rigidBody.velocity.y, vLimit.z);
+            if (rigidBody.velocity.magnitude > speed)
+            {
+                rigidBody.velocity = rigidBody.velocity.normalized * speed;
+            }
         }
+
+        else // Limit the speed on the ground and the air
+        {
+            Vector3 vFlat = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
+
+            // limit when needed
+            if (vFlat.magnitude > speed)
+            {
+                Vector3 vLimit = vFlat.normalized * speed;
+                rigidBody.velocity = new Vector3(vLimit.x, rigidBody.velocity.y, vLimit.z);
+            }
+        }  
     }
 
     public void JumpToPosition(Vector3 positionT, float trajectory)

@@ -36,7 +36,6 @@ public class MagnetPull : MonoBehaviour
 
     [Header("Input")]
     public KeyCode magnetKey = KeyCode.Mouse0;
-    public KeyCode magnetOff = KeyCode.Mouse1;
 
     private bool isAttracted;
 
@@ -53,11 +52,6 @@ public class MagnetPull : MonoBehaviour
         if (Input.GetKeyDown(magnetKey) && isAttracted == false) StartMagnet();
         if (magnetTimer > 0)
             magnetTimer -= Time.deltaTime;
-
-        if (Input.GetKeyDown(magnetOff) && isAttracted == true)
-        {
-            StopMagnet();
-        }
     }
 
     private void LateUpdate()
