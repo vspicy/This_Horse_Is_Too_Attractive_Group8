@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
 
     public float speed;
     public float jumpForce;
+    public float sprintMultiplier;
     private Rigidbody rigidBody;
 
     void Start()
@@ -33,28 +34,31 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void PlayerMove()
     {
+
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? speed * sprintMultiplier : speed;
+
         // gets the key input (A) to go left
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += Vector3.left * currentSpeed * Time.deltaTime;
         }
 
         // gets the key input (D) to go right
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            transform.position += Vector3.right * currentSpeed * Time.deltaTime;
         }
 
         // gets the key input (W) to go forward
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * speed * Time.deltaTime;
+            transform.position += Vector3.forward * currentSpeed * Time.deltaTime;
         }
 
         // gets the key input (S) to go backward
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.back * speed * Time.deltaTime;
+            transform.position += Vector3.back * currentSpeed * Time.deltaTime;
         }
     }
 
