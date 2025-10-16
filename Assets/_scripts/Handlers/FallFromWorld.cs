@@ -18,7 +18,7 @@ public class FallFromWorld : MonoBehaviour
     {
         if (transform.position.y < killFloor)
         {
-            transform.position = new Vector3(0f, 1.5f, 0f);
+            transform.position = new Vector3(0f, 4f, 0f);
         }
     }
 }
