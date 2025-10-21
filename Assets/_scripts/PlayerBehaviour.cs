@@ -60,12 +60,12 @@ public class PlayerBehaviour : MonoBehaviour
         }
         
         // Offset camera and rotate player
-        else if (currentStyle == Camera.Style.Combat)
+        else if (currentStyle == CameraStyle.Combat)
         {
-            Vector3 dirToCombatLookAt = player.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z)
+            Vector3 dirToCombatLookAt = player.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
             orientation.forward = dirToCombatLookAt.normalized;
 
-            playerObj.forward = dirToCombatLookAt.normalized;
+            player.forward = dirToCombatLookAt.normalized;
         }
     }
 }
