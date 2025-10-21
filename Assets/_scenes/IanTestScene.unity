@@ -2648,9 +2648,9 @@ MonoBehaviour:
     m_Bits: 64
   lr: {fileID: 7569736105954459810}
   maxMagnetDistance: 50
-  maxMagnetDelay: 2
-  overshoot: 0.00001
-  magnetCd: 0.1
+  maxMagnetDelay: 1
+  overshoot: 0.1
+  magnetCd: 0.5
   magnetKey: 323
 --- !u!4 &8509068806522788023
 Transform:
