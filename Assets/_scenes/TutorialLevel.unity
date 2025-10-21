@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10542880cdf8126499112112778e0180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killFloor: 0
+  killFloor: -1
 --- !u!1 &441945380777514254
 GameObject:
   m_ObjectHideFlags: 3
@@ -2460,7 +2460,7 @@ Transform:
   m_GameObject: {fileID: 2197017177371239642}
   serializedVersion: 2
   m_LocalRotation: {x: -0.005753274, y: 0.0045837476, z: 0.009905214, w: 0.9999239}
-  m_LocalPosition: {x: 43.87034, y: 46.57275, z: -22.98976}
+  m_LocalPosition: {x: 44.12, y: 44.86, z: -6.97}
   m_LocalScale: {x: 1.5038, y: 1.5038002, z: 1.5038003}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3142,7 +3142,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -3775,7 +3775,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -4252,7 +4252,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2183508803286986764}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -4682,7 +4682,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -4744,14 +4744,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 3722682962350530069}
-  cam: {fileID: 4854442364499330920}
+  cam: {fileID: 52574593956718037}
   magnetTip: {fileID: 6579146136071078071}
   canMagnet:
     serializedVersion: 2
     m_Bits: 64
   lr: {fileID: 4723485268389510377}
   maxMagnetDistance: 50
-  maxMagnetDelay: 1
+  maxMagnetDelay: 0.1
   overshoot: 0.00001
   magnetCd: 1
   magnetKey: 323
@@ -4791,7 +4791,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -4861,7 +4861,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
