@@ -101,6 +101,7 @@ public class MagnetPull : MonoBehaviour
         if (magnetRelativeY < 0) arcPeak = overshoot;
 
         pm.JumpToPosition(magnetPoint, arcPeak);
+        rb.useGravity = false;
         Invoke(nameof(StopMagnet), 1f);
     }
 
@@ -110,6 +111,7 @@ public class MagnetPull : MonoBehaviour
     public void StopMagnet()
     {
         isAttracted = false; // Set Attraction Properties off
+        rb.useGravity = true;
         print("Magnet Inactive");
 
         magnetTimer = magnetCd;
