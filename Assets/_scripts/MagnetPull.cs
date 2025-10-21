@@ -76,7 +76,6 @@ public class MagnetPull : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxMagnetDistance, canMagnet))
         {
             magnetPoint = hit.point;
-
             Invoke(nameof(ExecuteMagnet), magnetCd);
         }
         else
@@ -114,7 +113,6 @@ public class MagnetPull : MonoBehaviour
         print("Magnet Inactive");
 
         magnetTimer = magnetCd;
-
         lr.enabled = false; // disable line (testing)
     }
 }
