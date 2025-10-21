@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10542880cdf8126499112112778e0180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killFloor: -20
+  killFloor: -10
 --- !u!1 &6013606200939929407
 GameObject:
   m_ObjectHideFlags: 0
