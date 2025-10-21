@@ -21,6 +21,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     public float rotSpd;
 
+    [Header("Camera")]
+    public CameraStyle currentStyle;
+    public Transform combatLookAt;
+
+    public enum CameraStyle
+    {
+        Base,
+        Combat
+    }
+
     // Start is called before the first frame
     void Start()
     {
@@ -37,13 +47,25 @@ public class PlayerBehaviour : MonoBehaviour
         orientation.forward = viewDir.normalized;
 
         // Rotate player
-        float horzInput = Input.GetAxis("Horizontal");
-        float vertInput = Input.GetAxis("Vertical");
-        Vector3 inputDir = orientation.forward * vertInput + orientation.right * horzInput;
-
-        if(inputDir != Vector3.zero)
+        if (currentStyle == CameraStyle.Base)
         {
-            playerCtrl.forward = Vector3.Slerp(playerCtrl.forward, inputDir.normalized, Time.deltaTime * rotSpd);
+            float horzInput = Input.GetAxis("Horizontal");
+            float vertInput = Input.GetAxis("Vertical");
+            Vector3 inputDir = orientation.forward * vertInput + orientation.right * horzInput;
+
+            if (inputDir != Vector3.zero)
+            {
+                playerCtrl.forward = Vector3.Slerp(playerCtrl.forward, inputDir.normalized, Time.deltaTime * rotSpd);
+            }
+        }
+        
+        // Offset camera and rotate player
+        else if (currentStyle == Camera.Style.Combat)
+        {
+            Vector3 dirToCombatLookAt = player.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z)
+            orientation.forward = dirToCombatLookAt.normalized;
+
+            playerObj.forward = dirToCombatLookAt.normalized;
         }
     }
 }
