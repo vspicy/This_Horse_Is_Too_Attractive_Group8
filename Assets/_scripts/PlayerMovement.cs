@@ -75,7 +75,7 @@ public class Movement : MonoBehaviour
     {
         InputAxes();
         // Raycast to the ground to tell when the player is grounded
-        onGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.75f + 0.2f, isGrounded);
+        onGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isGrounded);
 
         Control();
         StateHandler();
