@@ -11,6 +11,7 @@ using UnityEngine;
 public class MagnetAttractionInput : MonoBehaviour
 {
     public GameObject magnetRadius;
+    public bool magnetOn;
 
     // Update every frame
     private void Update()
@@ -19,12 +20,16 @@ public class MagnetAttractionInput : MonoBehaviour
         {
             Debug.Log("LMB Down: Magnet Active");
             magnetRadius.SetActive(true);
+
+            magnetOn = true;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             Debug.Log("LMB Up: Magnet Inactive");
             magnetRadius.SetActive(false);
+
+            magnetOn = false;
         }
     }
 }
