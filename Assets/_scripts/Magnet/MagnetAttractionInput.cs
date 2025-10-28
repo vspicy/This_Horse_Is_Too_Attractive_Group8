@@ -10,8 +10,6 @@ using UnityEngine;
 
 public class MagnetAttractionInput : MonoBehaviour
 {
-
-    [Header("References")]
     public GameObject magnetRadius;
     public bool magnetOn;
 
