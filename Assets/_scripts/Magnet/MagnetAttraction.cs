@@ -8,7 +8,7 @@ using UnityEngine;
  * Objective: Code that allows the player to attract themselves to other objects with a magnet (but Updated).
  */
 
-public class MagnetAttractionInput : MonoBehaviour
+public class MagnetAttraction : MonoBehaviour
 {
     public GameObject magnetRadius;
 
