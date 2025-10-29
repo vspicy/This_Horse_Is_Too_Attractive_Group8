@@ -59,6 +59,5 @@ public class Repulsion : MonoBehaviour
 
         //applies the force
         playerRB.AddForce(direction * repulsionForce, ForceMode.Impulse);
-
     }
 }

@@ -11,11 +11,9 @@ using UnityEngine;
 public class AttractFunction : MonoBehaviour
 {
     [Header("References")]
-    public Rigidbody playerRB;
-    public GameObject magnetSurface;
+    private Rigidbody playerRB;
 
     [Header("Variables")]
-    public bool magnetOn;
     public float velocity;
     private bool inRange;
 
@@ -59,16 +57,15 @@ public class AttractFunction : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // If LMB pressed:
         {
             Debug.Log("LMB Down: Magnet Active");
-            magnetOn = true;
-
-            Attract();
+            if (inRange == true)
+            {
+                Attract();
+            }
         }
 
         else if (Input.GetMouseButtonUp(0)) // If LMB released:
         {
             Debug.Log("LMB Up: Magnet Inactive");
-
-            magnetOn = false;
         }
     }
 
@@ -77,16 +74,9 @@ public class AttractFunction : MonoBehaviour
     /// </summary>
     private void Attract()
     {
-        if (magnetOn == true && inRange == true)
-        {
+        // Calculate direction to the source
+        Vector3 dir = (transform.position - playerRB.position).normalized;
 
-            // Calculate direction to the source
-            Vector3 dir = (playerRB.position - transform.position).normalized;
-
-            //clears velocity
-            playerRB.velocity = new Vector3(0, 0, 0);
-
-            playerRB.AddForce(dir * velocity, ForceMode.Impulse);
-        }
+        playerRB.AddForce(dir * velocity, ForceMode.Impulse);
     }
 }
