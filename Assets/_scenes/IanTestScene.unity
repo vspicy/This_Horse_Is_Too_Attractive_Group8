@@ -1691,6 +1691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac9ee5e33d4d6d40b27b752faed1dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnetSurface: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+  velocity: 50
   magnetRadius: {fileID: 6023331491482331089}
   magnetOn: 0
 --- !u!114 &4197444432500961533
@@ -2204,7 +2206,6 @@ GameObject:
   - component: {fileID: 4046782155234892342}
   - component: {fileID: 6131041105663825330}
   - component: {fileID: 4494884034915018540}
-  - component: {fileID: 9118815735968441825}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -2285,7 +2286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6270499993595274606}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
+  m_LocalRotation: {x: 0.18668355, y: 0.000000029278405, z: -0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2590,7 +2591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998850783112814716}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668355, y: 0.000000029278405, z: -0.000000005563604, w: 0.98242015}
+  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2950,7 +2951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8897586156215552114}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668355, y: 0.000000029278405, z: -0.000000005563604, w: 0.98242015}
+  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: -3.113089, y: 4.18, z: -25.192745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3045,7 +3046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439499623321204006}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668355, y: 0.000000029278405, z: -0.000000005563604, w: 0.98242015}
+  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3366,21 +3367,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &9118815735968441825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5571956193436032934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2abf6fb9f6ffde74f81a25875eb0937e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnetSurface: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-  velocity: 5
-  magnetOn: {fileID: 4046782155234892342}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

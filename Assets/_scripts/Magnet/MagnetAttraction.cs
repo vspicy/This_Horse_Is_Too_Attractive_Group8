@@ -10,8 +10,13 @@ using UnityEngine;
 
 public class MagnetAttraction : MonoBehaviour
 {
+
+    [Header("Fields")]
+    [SerializeField] private GameObject magnetSurface; // Make private variable visible
+    [SerializeField] private float velocity;
+
     public GameObject magnetRadius;
-    public bool magnetOn = false;
+    public bool magnetOn;
 
     // Update every frame
     private void Update()
@@ -31,5 +36,8 @@ public class MagnetAttraction : MonoBehaviour
 
             magnetOn = false;
         }
+
+        if (magnetOn == true)
+            transform.position = Vector3.MoveTowards(this.transform.position, magnetSurface.transform.position, velocity * Time.deltaTime);
     }
 }
