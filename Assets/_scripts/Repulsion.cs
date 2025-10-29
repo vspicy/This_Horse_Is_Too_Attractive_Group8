@@ -3,36 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Author: [Ruffner, Kaylie]
- * Creation Date: [10-22-2025]
- * Summarization: [This script handles the repulsion for the player, where the player can repel themselves.]
+ * Author: [Bose, Hayden]
+ * Creation Date: [10-28-2025]
+ * Summarization: [This script handles the repulsion mechanic for the player, where the player can repel themselves off magnetic surfaces]
  */
 public class Repulsion : MonoBehaviour
 {
-    private float repulsionForce = 10f;
-    private Rigidbody rb;
-    // Start is called before the first frame update
+    public float repulsionForce = 50f;
+    public float cooldownTime = 1f;
+    private float lastRepulseTime;
+    private bool playerInRange;
+    private Rigidbody playerRB;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        playerInRange = false;
     }
 
-    // Update is called once per frame
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerRB = other.GetComponent<Rigidbody>();
+            print("Player has entered range");
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+            print("Player has left range");
+            playerRB = null;
+        }
+    }
+
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Mouse1) && playerInRange == true && Time.time >= lastRepulseTime + cooldownTime)
+        {
+            print("Repel");
+            Repulse();
+            lastRepulseTime = Time.time;
+        }
     }
 
-    // call when want to trigger the repulsion
-    public void PlayerRepulsion(Vector3 sourcePosition)
+    public void Repulse()
     {
-        // calculate direction away from the source 
-        Vector3 direction = (transform.position - sourcePosition).normalized;
+        // calculates direction away from the source
+        Vector3 direction = (playerRB.position - transform.position).normalized; 
 
-        //clear any downward velocity if a clean launch is wanted
-        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        //clears velocity
+        playerRB.velocity = new Vector3(0, 0, 0);
 
-        //apply the impluse force
-        rb.AddForce(direction * repulsionForce, ForceMode.Impulse);
+        //applies the force
+        playerRB.AddForce(direction * repulsionForce, ForceMode.Impulse);
+
     }
 }
