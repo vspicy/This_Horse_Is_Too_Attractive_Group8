@@ -482,7 +482,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1248,6 +1248,7 @@ GameObject:
   - component: {fileID: 3378107217852766243}
   - component: {fileID: 79961412977645132}
   - component: {fileID: 6283061812540460483}
+  - component: {fileID: 6283061812540460484}
   m_Layer: 6
   m_Name: MagneticSurface
   m_TagString: Untagged
@@ -2204,7 +2205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6270499993595274606}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668357, y: -1.249128e-16, z: 5.8012244e-18, w: 0.9824201}
+  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2290,6 +2291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0ccccaf60923e41bc11169c66a0241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  repulsionForce: 50
+  cooldownTime: 1
 --- !u!64 &6186692422388702253
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2366,9 +2369,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRB: {fileID: 9118815735968441824}
-  magnetSurface: {fileID: 2197017179236099489}
+  magnetSurface: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
   magnetOn: 0
-  velocity: 20
+  velocity: 50
+--- !u!114 &6283061812540460484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197017179236099489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0ccccaf60923e41bc11169c66a0241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repulsionForce: 50
+  cooldownTime: 1
 --- !u!1 &6352091930689696994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998850783112814716}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
+  m_LocalRotation: {x: 0.18668355, y: 0.000000029278405, z: -0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2866,7 +2883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8897586156215552114}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
+  m_LocalRotation: {x: 0.18668355, y: 0.000000029278405, z: -0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: -3.113089, y: 4.18, z: -25.192745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2919,7 +2936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439499623321204006}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18668355, y: -0.000000029278405, z: 0.000000005563604, w: 0.98242015}
+  m_LocalRotation: {x: 0.18668355, y: 0.000000029278405, z: -0.000000005563604, w: 0.98242015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

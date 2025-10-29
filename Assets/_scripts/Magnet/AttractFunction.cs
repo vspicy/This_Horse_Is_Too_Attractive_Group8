@@ -6,7 +6,8 @@ using UnityEngine;
  * Name: Ian Phurchpean
  * Date: 28 October 2025
  * Objective: When a magnetic surface is close to the player, attract them to it.
- */
+ */
+
 public class AttractFunction : MonoBehaviour
 {
     [Header("References")]
@@ -21,7 +22,7 @@ public class AttractFunction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        inRange = false;
     }
 
     /// <summary>
@@ -33,6 +34,7 @@ public class AttractFunction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerRB = other.GetComponent<Rigidbody>();
+            print("Player has entered range");
             inRange = true;
         }
     }
@@ -46,6 +48,7 @@ public class AttractFunction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            print("Player has left range");
             playerRB = null;
         }
     }
@@ -75,6 +78,15 @@ public class AttractFunction : MonoBehaviour
     private void Attract()
     {
         if (magnetOn == true && inRange == true)
-            transform.position = Vector3.MoveTowards(this.transform.position, magnetSurface.transform.position, velocity * Time.deltaTime);
+        {
+
+            // Calculate direction to the source
+            Vector3 dir = (playerRB.position - transform.position).normalized;
+
+            //clears velocity
+            playerRB.velocity = new Vector3(0, 0, 0);
+
+            playerRB.AddForce(dir * velocity, ForceMode.Impulse);
+        }
     }
 }
