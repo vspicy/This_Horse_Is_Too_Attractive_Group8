@@ -36,8 +36,5 @@ public class MagnetAttraction : MonoBehaviour
 
             magnetOn = false;
         }
-
-        if (magnetOn == true)
-            transform.position = Vector3.MoveTowards(this.transform.position, magnetSurface.transform.position, velocity * Time.deltaTime);
     }
 }
