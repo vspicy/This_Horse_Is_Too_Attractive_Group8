@@ -11,7 +11,7 @@ using UnityEngine;
 public class TestAttraction : MonoBehaviour
 {
     private float attractionForce = 4f;
-    private float maxForce = 10f;
+    private float maxForce = 20f;
     private float accelerationRate = 2f;
     private float currentForceMultiplier = 0f;
     private bool playerInRange;
@@ -69,9 +69,9 @@ public class TestAttraction : MonoBehaviour
         // Apply force
         playerRB.AddForce(force, ForceMode.Force);
 
-        if (playerRB.velocity.magnitude > 12f)
+        if (playerRB.velocity.magnitude > 15f)
         {
-            //playerRB.velocity = playerRB.velocity.normalized * 12f;
+            playerRB.velocity = playerRB.velocity.normalized * 15f;
         }
 
     }

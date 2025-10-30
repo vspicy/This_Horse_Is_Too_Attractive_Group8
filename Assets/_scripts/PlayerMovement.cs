@@ -5,194 +5,144 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
     /*
      * Authors: [Ruffner, Kaylie]
      * Creation Date: [9-27-2025]
-     * Summary: [This script handles the player's movement (running, sprinting, jumping)]
+     * Summary: Handles the player's movement including walking, sprinting, jumping, slopes, and magnet effects.
      */
-    
-    // Set player speed
-    [Header("Speed")]
-    private float speed;
-    public float walkSpeed;
-    public float sprintSpeed;
-    public KeyCode sprintKey = KeyCode.LeftShift;
 
-    // Get Rigidbody of the player
-    private Rigidbody rigidBody;
-    public float maxSpeed;
-    public float sprintMultiplier = 2f;
+    [Header("Speed Settings")]
+    private float speed; // Current movement speed
+    public float walkSpeed; // Walking speed
+    public float sprintSpeed; // Sprinting speed
+    public KeyCode sprintKey = KeyCode.LeftShift; // Sprint key
 
-    // Get height of the player
-    public float playerHeight;
-    public LayerMask isGrounded;
-    public bool onGround;
-    private bool enableMovement;
+    private Rigidbody rigidBody; // Player's Rigidbody
+    public float maxSpeed; // Maximum speed limit
+    public float sprintMultiplier = 2f; // Multiplier when sprinting
 
-    // Jumping
+    [Header("Ground & Slope Detection")]
+    public float playerHeight; // Height of the player for ground checks
+    public LayerMask isGrounded; // Layers considered ground
+    public bool onGround; // True if player is on ground
+    private bool enableMovement; // Used for magnet movement
+
     [Header("Jumping")]
-    bool readyToJump = true;
-    public KeyCode jumpKey = KeyCode.Space;
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
+    bool readyToJump = true; // Ready to jump
+    public KeyCode jumpKey = KeyCode.Space; // Jump key
+    public float jumpForce; // Impulse applied when jumping
+    public float jumpCooldown; // Time between jumps
+    public float airMultiplier; // Movement multiplier while in air
 
-    [Header("Slope")]
-    public float maxSlope;
-    private RaycastHit onSlope;
-    private bool exitSlope;
+    [Header("Slope Handling")]
+    public float maxSlope; // Maximum angle considered a slope
+    private RaycastHit onSlope; // Raycast hit info for slope detection
+    private bool exitSlope; // Used to prevent slope forces after jumping
 
-    // Get player orientation
-    public Transform orientation;
+    [Header("Orientation")]
+    public Transform orientation; // Reference for movement direction
 
-    // Get the horizontal and vertical positions of the player, and the move direction
+    // Input and movement calculations
     private float horzInput;
     private float vertInput;
     private Vector3 moveDirection;
-  
-    // Check if the magnet is currently active
-    public bool activeMagnet;
 
-    public MovementStates state;
+    [Header("Magnet Interaction")]
+    public bool activeMagnet; // True if player is being attracted to an object
 
-    public enum MovementStates
-    {
-        walking,
-        sprinting,
-        inAir
-    }
+    public MovementStates state; // Current movement state
+    public enum MovementStates { walking, sprinting, inAir }
 
     void Start()
     {
-        // Get the rigidBody component
         rigidBody = GetComponent<Rigidbody>();
-        rigidBody.freezeRotation = true; // Freeze rotational movement of the Rigidbody (Does not fall over)
+        rigidBody.freezeRotation = true; // Prevent player from tipping over
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Reset player position
         if (Input.GetKeyDown(KeyCode.R))
-        {
-            transform.position = new Vector3(0f, 4f, -15f); // Reset player position to the start of the level
-        }
+            transform.position = new Vector3(0f, 4f, -15f);
 
         InputAxes();
-        // Raycast to the ground to tell when the player is grounded
-        onGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isGrounded);
 
-        Control();
-        StateHandler();
+        // Ground check (ignore triggers so player doesn't stand on trigger objects)
+        onGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isGrounded, QueryTriggerInteraction.Ignore);
 
-        // apply max speed
-        if (onGround && !activeMagnet)
-            rigidBody.drag = maxSpeed; // Set maximum Speed of the object
-        else if (!onGround)
-            rigidBody.drag = 0; // There is less friction and resistance in the air
+        Control(); // Limit speed
+        StateHandler(); // Update movement state
+
+        // Adjust drag: some friction on ground, none in air
+        rigidBody.drag = onGround && !activeMagnet ? 2f : 0f;
     }
 
     private void FixedUpdate()
     {
-        PlayerMove();
-        
+        PlayerMove(); // Apply movement forces
     }
 
     /// <summary>
-    /// Get horizontal and vertical axes of the player in any current state.
+    /// Handles player input
     /// </summary>
     private void InputAxes()
     {
         horzInput = Input.GetAxisRaw("Horizontal");
         vertInput = Input.GetAxisRaw("Vertical");
 
-        // when to jump
+        // Jumping
         if (Input.GetKey(jumpKey) && readyToJump && onGround)
         {
             readyToJump = false;
-
             Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
 
     /// <summary>
-    /// this handes the movement of the player, checking the input of each keybind
+    /// Apply movement forces to the player
     /// </summary>
     private void PlayerMove()
     {
-        if (activeMagnet) return;
+        if (activeMagnet) return; // Don't move normally when magnetized
 
-        // Calculate direction of movement
-        moveDirection = orientation.forward * vertInput + orientation.right * horzInput; // Always walk in the direction the player
+        moveDirection = orientation.forward * vertInput + orientation.right * horzInput;
 
-        // On a Slope
         if (OnSlope() && !exitSlope)
         {
-            rigidBody.AddForce(GetSlopeMoveDir() * speed * 20f, ForceMode.Force);
+            // Only apply slope forces for non-trigger surfaces
+            if (!onSlope.collider.isTrigger)
+                rigidBody.AddForce(GetSlopeMoveDir() * speed * 10f, ForceMode.Force);
 
-            // While traveling upward, force the player towards the ground to prevent bouncing
-            if (rigidBody.velocity.y > 0)
-                rigidBody.AddForce(Vector3.down * 80f, ForceMode.Force);
+            rigidBody.useGravity = true;
         }
-
-        // On the ground
-        if (onGround)
+        else if (onGround)
+        {
             rigidBody.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
-
-        // In the air
-        else if (!onGround)
+            rigidBody.useGravity = true;
+        }
+        else
+        {
             rigidBody.AddForce(moveDirection.normalized * speed * 10f * airMultiplier, ForceMode.Force);
-
-        // While not on a slope, turn on the gravity
-        // While on a slope, turn off the gravity
-        rigidBody.useGravity = !OnSlope();
-
-        // gets the key input (A) to go left
-        /*
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            rigidBody.useGravity = true;
         }
-
-        // gets the key input (D) to go right
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
-
-        // gets the key input (W) to go forward
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += Vector3.forward * speed * Time.deltaTime;
-        }
-
-        // gets the key input (S) to go backward
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += Vector3.back * speed * Time.deltaTime;
-        }
-        */
     }
 
     /// <summary>
-    /// Handles the current state of the player.
+    /// Determine current movement state and speed
     /// </summary>
     private void StateHandler()
     {
-        // If Sprinting
         if (onGround && Input.GetKey(sprintKey))
         {
             state = MovementStates.sprinting;
             speed = sprintSpeed;
         }
-        // If Walking
         else if (onGround)
         {
             state = MovementStates.walking;
             speed = walkSpeed;
         }
-        // In Air
         else
         {
             state = MovementStates.inAir;
@@ -200,15 +150,12 @@ public class Movement : MonoBehaviour
     }
 
     /// <summary>
-    /// The player jumps
+    /// Player jump logic
     /// </summary>
     private void Jump()
     {
         exitSlope = true;
-
-        // reset y velocity
-        rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
-
+        rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z); // Reset vertical velocity
         rigidBody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
@@ -219,69 +166,60 @@ public class Movement : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns value if Player is on a slope
+    /// Returns true if player is on a slope (ignores triggers)
     /// </summary>
-    /// <returns></returns>
     private bool OnSlope()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out onSlope, playerHeight * 0.5f + 0.3f))
+        if (Physics.Raycast(transform.position, Vector3.down, out onSlope, playerHeight * 0.5f + 0.3f, isGrounded, QueryTriggerInteraction.Ignore))
         {
             float angle = Vector3.Angle(Vector3.up, onSlope.normal);
-            return angle < maxSlope && angle != 0; // Return the value of an angle if it is less than the max slope and not equal to 0
+            return angle < maxSlope && angle != 0;
         }
-        return false; // Return nothing if there is no slope
+        return false;
     }
 
     /// <summary>
-    /// Project normal move direction on the slope
+    /// Project movement direction onto slope plane
     /// </summary>
-    /// <returns></returns>
     private Vector3 GetSlopeMoveDir()
     {
         return Vector3.ProjectOnPlane(moveDirection, onSlope.normal).normalized;
     }
 
     /// <summary>
-    /// Provide a hard limit on the player's movement.
+    /// Limit player speed on ground, slopes, and in air
     /// </summary>
     private void Control()
     {
-
-        // Limit the speed on a slope
         if (OnSlope() && !exitSlope)
         {
             if (rigidBody.velocity.magnitude > speed)
-            {
                 rigidBody.velocity = rigidBody.velocity.normalized * speed;
-            }
         }
-
-        else // Limit the speed on the ground and the air
+        else
         {
             Vector3 vFlat = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
-
-            // limit when needed
             if (vFlat.magnitude > speed)
             {
                 Vector3 vLimit = vFlat.normalized * speed;
                 rigidBody.velocity = new Vector3(vLimit.x, rigidBody.velocity.y, vLimit.z);
             }
-        }  
+        }
     }
 
+    /// <summary>
+    /// Jump towards a position (magnet interaction)
+    /// </summary>
     public void JumpToPosition(Vector3 positionT, float trajectory)
     {
         activeMagnet = true;
         rigidBody.velocity = CalculateJumpVelocity(transform.position, positionT, trajectory);
         Invoke(nameof(SetVelocity), 4f);
-        Invoke(nameof(ResetRestrictions), 2f); // Something went wrong
+        Invoke(nameof(ResetRestrictions), 2f);
     }
 
     private Vector3 setVelocity;
 
-    /// <summary>
-    /// Set velocity of the player while attracted to other objects.
-    /// </summary>
     private void SetVelocity()
     {
         enableMovement = true;
@@ -300,28 +238,21 @@ public class Movement : MonoBehaviour
 
         return velocityXZ + velocityY;
     }
-    
-    /// <summary>
-    /// Reset any and all functions that may have been disabled.
-    /// </summary>
+
     private void ResetRestrictions()
     {
         activeMagnet = false;
     }
 
     /// <summary>
-    /// Activate on collision with an object
+    /// Reset magnet movement on collision with non-attract objects
     /// </summary>
-    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (enableMovement && !collision.gameObject.GetComponent<AttractFunction>())
         {
             enableMovement = false;
             ResetRestrictions();
-
-            //GetComponent<MagnetPull>().StopMagnet();
         }
     }
 }
-
