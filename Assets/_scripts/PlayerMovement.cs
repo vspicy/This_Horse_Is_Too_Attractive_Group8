@@ -315,7 +315,7 @@ public class Movement : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        if (enableMovement)
+        if (enableMovement && !collision.gameObject.GetComponent<AttractFunction>())
         {
             enableMovement = false;
             ResetRestrictions();
