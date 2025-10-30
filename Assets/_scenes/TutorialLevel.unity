@@ -2770,7 +2770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &2003953321
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4524,7 +4524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac9ee5e33d4d6d40b27b752faed1dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnetSurface: {fileID: 0}
+  velocity: 0
   magnetRadius: {fileID: 5928654501318505452}
+  magnetOn: 0
 --- !u!23 &4296597154993585362
 MeshRenderer:
   m_ObjectHideFlags: 0
