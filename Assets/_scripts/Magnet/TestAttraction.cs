@@ -10,9 +10,9 @@ using UnityEngine;
 
 public class TestAttraction : MonoBehaviour
 {
-    private float attractionForce = 4f;
-    private float maxForce = 20f;
-    private float accelerationRate = 2f;
+    private float attractionForce = 15f;
+    private float maxForce = 75f;
+    private float accelerationRate = 10f;
     private float currentForceMultiplier = 0f;
     private bool playerInRange;
     private Rigidbody playerRB;
@@ -63,7 +63,7 @@ public class TestAttraction : MonoBehaviour
         Vector3 direction = (transform.position - playerRB.position).normalized;
 
         // Ramp up the pull force
-        currentForceMultiplier = Mathf.MoveTowards(currentForceMultiplier, 1f, accelerationRate * Time.fixedDeltaTime);
+        currentForceMultiplier = Mathf.MoveTowards(currentForceMultiplier, 1f, accelerationRate * Time.deltaTime);
 
         // Calculate force and clamp magnitude
         Vector3 force = direction * attractionForce * currentForceMultiplier;
