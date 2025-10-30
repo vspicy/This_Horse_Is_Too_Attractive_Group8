@@ -4,13 +4,13 @@ using UnityEngine;
 
 /*
  * Author: [Bose, Hayden]
- * Creation Date: [10-28-2025]
+ * Creation Date: [10-29-2025]
  * Summarization: [This script handles the repulsion mechanic for the player, where the player can repel themselves off magnetic surfaces]
  */
 public class Repulsion : MonoBehaviour
 {
-    public float repulsionForce = 50f;
-    public float cooldownTime = 1f;
+    private float repulsionForce = 25f;
+    private float cooldownTime = 2f;
     private float lastRepulseTime;
     private bool playerInRange;
     private Rigidbody playerRB;
@@ -31,6 +31,7 @@ public class Repulsion : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
@@ -41,6 +42,14 @@ public class Repulsion : MonoBehaviour
 
     void Update()
     {
+        if (playerRB != null)
+        {
+            if (playerRB.velocity.magnitude > 40)
+            {
+                playerRB.velocity = playerRB.velocity.normalized * 40;
+            }
+        }
+
         if (Input.GetKey(KeyCode.Mouse1) && playerInRange == true && Time.time >= lastRepulseTime + cooldownTime)
         {
             print("Repel");
@@ -52,12 +61,13 @@ public class Repulsion : MonoBehaviour
     public void Repulse()
     {
         // calculates direction away from the source
-        Vector3 direction = (playerRB.position - transform.position).normalized; 
+        Vector3 direction = (playerRB.position - transform.position).normalized;
 
         //clears velocity
-        playerRB.velocity = new Vector3(0, 0, 0);
+        playerRB.velocity = Vector3.zero;
 
-        //applies the force
-        playerRB.AddForce(direction * repulsionForce, ForceMode.Impulse);
+        // Apply instantaneous velocity change (mass-independent)
+        playerRB.AddForce(direction * repulsionForce, ForceMode.VelocityChange);
+
     }
 }
