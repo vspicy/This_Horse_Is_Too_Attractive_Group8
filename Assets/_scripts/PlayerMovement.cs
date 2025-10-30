@@ -320,7 +320,7 @@ public class Movement : MonoBehaviour
             enableMovement = false;
             ResetRestrictions();
 
-            GetComponent<MagnetPull>().StopMagnet();
+            //GetComponent<MagnetPull>().StopMagnet();
         }
     }
 }
