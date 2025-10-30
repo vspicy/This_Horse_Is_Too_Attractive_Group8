@@ -73,6 +73,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = new Vector3(0f, 4f, -15f); // Reset player position to the start of the level
+        }
+
         InputAxes();
         // Raycast to the ground to tell when the player is grounded
         onGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isGrounded);
