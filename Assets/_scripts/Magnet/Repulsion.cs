@@ -25,6 +25,7 @@ public class Repulsion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // On player exit, change InRange boolean to true
         if (other.CompareTag("Player"))
         {
             playerRB = other.GetComponent<Rigidbody>();
@@ -34,6 +35,7 @@ public class Repulsion : MonoBehaviour
         }
     }
 
+    // On player exit, change InRange boolean to false
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -56,7 +58,7 @@ public class Repulsion : MonoBehaviour
             }
         }
 
-        // Right-click activates repulsion
+        // Right click to activate repulsion
         if (Input.GetKeyDown(KeyCode.Mouse1) && playerInRange && Time.time >= lastRepulseTime + cooldownTime)
         {
             print("Repel");

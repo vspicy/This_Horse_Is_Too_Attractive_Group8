@@ -21,6 +21,7 @@ public class TestAttraction : MonoBehaviour
         playerInRange = false;
     }
 
+    // On player exit, change InRange boolean to true
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -32,6 +33,7 @@ public class TestAttraction : MonoBehaviour
         }
     }
 
+    // On player exit, change InRange boolean to false
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -44,6 +46,7 @@ public class TestAttraction : MonoBehaviour
 
     void Update()
     {
+        //Run Attract if mouse 0 is held down
         if (Input.GetKey(KeyCode.Mouse0) && playerInRange == true)
         {
             print("Attract");
@@ -51,7 +54,7 @@ public class TestAttraction : MonoBehaviour
         }
         else
         {
-            currentForceMultiplier = Mathf.MoveTowards(currentForceMultiplier, 0f, accelerationRate * Time.fixedDeltaTime);
+            currentForceMultiplier = Mathf.MoveTowards(currentForceMultiplier, 0f, accelerationRate * Time.fixedDeltaTime); //slow down acceleration multiplier
         }
     }
 
@@ -59,10 +62,10 @@ public class TestAttraction : MonoBehaviour
     {
         Vector3 direction = (transform.position - playerRB.position).normalized;
 
-        // Smoothly ramp up the pull force
+        // Ramp up the pull force
         currentForceMultiplier = Mathf.MoveTowards(currentForceMultiplier, 1f, accelerationRate * Time.fixedDeltaTime);
 
-        // Compute force and clamp magnitude
+        // Calculate force and clamp magnitude
         Vector3 force = direction * attractionForce * currentForceMultiplier;
         force = Vector3.ClampMagnitude(force, maxForce);
 

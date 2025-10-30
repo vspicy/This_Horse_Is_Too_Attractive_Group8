@@ -3,17 +3,14 @@ using UnityEngine;
 /*
  * Author: [Bose, Hayden]
  * Creation Date: [10-30-2025]
- * Summary: Detects when the player lands on the ground or enters a magnet trigger, and re-enables the Movement script if it was disabled.
+ * Summary: Detects when the player lands on the ground or enters a magnet and re-enables the Movement script if it was disabled.
  *         
  */
 
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerGroundCheck : MonoBehaviour
 {
-    [Header("References")]
     public Movement movementScript;          // Reference to player's Movement script
 
-    [Header("Ground Check Settings")]
     public float playerHeight = 2f;          // Approximate height of the player
     public LayerMask groundLayer;            // Layers considered ground
     public float groundCheckOffset = 0.2f;   // Extra buffer distance
@@ -30,10 +27,10 @@ public class PlayerGroundCheck : MonoBehaviour
 
     void Update()
     {
-        // Perform ground check using a downward ray
+        // Perform ground check using a downward raycast
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + groundCheckOffset, groundLayer, QueryTriggerInteraction.Ignore);
 
-        // Detect landing (was in air, now grounded)
+        // Detect landing
         if (!wasGrounded && isGrounded)
         {
             Debug.Log("Player has landed on the ground.");
@@ -45,7 +42,7 @@ public class PlayerGroundCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the player entered a magnet trigger
+        // Check if the player entered a magnet
         if (other.GetComponent<TestAttraction>() != null)
         {
             Debug.Log("Player entered a magnet trigger.");
@@ -53,6 +50,7 @@ public class PlayerGroundCheck : MonoBehaviour
         }
     }
 
+    // Turn on movement
     private void ReenableMovement()
     {
         if (movementScript != null && !movementScript.enabled)
