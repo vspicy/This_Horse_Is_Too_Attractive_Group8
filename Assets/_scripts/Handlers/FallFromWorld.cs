@@ -20,9 +20,5 @@ public class FallFromWorld : MonoBehaviour
         {
             transform.position = new Vector3(0f, 4f, -15f);
         }
-
-        // Reset player position
-        if (Input.GetKeyDown(KeyCode.R))
-            transform.position = new Vector3(0f, 4f, -15f);
-    }
+    } 
 }
