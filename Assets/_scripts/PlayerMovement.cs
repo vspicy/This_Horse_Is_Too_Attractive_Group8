@@ -61,10 +61,6 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        // Reset player position
-        if (Input.GetKeyDown(KeyCode.R))
-            transform.position = new Vector3(0f, 4f, -15f);
-
         InputAxes();
 
         // Ground check (ignore triggers so player doesn't stand on trigger objects)

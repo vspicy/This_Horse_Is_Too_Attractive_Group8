@@ -3091,7 +3091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909837304}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.19750667, y: -0.000000014607633, z: -0.0000000029430791, w: 0.98030156}
+  m_LocalRotation: {x: -0.19750667, y: 0.000000014607633, z: 0.0000000029430791, w: 0.98030156}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5086,7 +5086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099913554}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.19750667, y: -0.000000014607633, z: -0.0000000029430791, w: 0.98030156}
+  m_LocalRotation: {x: -0.19750668, y: -3.499146e-17, z: -9.324689e-17, w: 0.98030156}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5103,12 +5103,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2146387436}
+  - component: {fileID: 2146387430}
   - component: {fileID: 2146387435}
   - component: {fileID: 2146387434}
-  - component: {fileID: 2146387433}
-  - component: {fileID: 2146387432}
   - component: {fileID: 2146387431}
-  - component: {fileID: 2146387430}
   - component: {fileID: 2146387429}
   m_Layer: 0
   m_Name: PlayerObject
@@ -5169,46 +5167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killFloor: -1
---- !u!114 &2146387432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146387428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac9ee5e33d4d6d40b27b752faed1dfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnetSurface: {fileID: 0}
-  velocity: 0
-  magnetRadius: {fileID: 37868785}
-  magnetOn: 0
---- !u!114 &2146387433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146387428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d63e37fac1a1bc478072cca0673cf0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pm: {fileID: 2146387434}
-  cam: {fileID: 107490388}
-  magnetTip: {fileID: 1140727061}
-  canMagnet:
-    serializedVersion: 2
-    m_Bits: 64
-  lr: {fileID: 61708713}
-  maxMagnetDistance: 50
-  maxMagnetDelay: 0.1
-  overshoot: 0.00001
-  magnetCd: 0.1
-  magnetKey: 323
 --- !u!114 &2146387434
 MonoBehaviour:
   m_ObjectHideFlags: 0

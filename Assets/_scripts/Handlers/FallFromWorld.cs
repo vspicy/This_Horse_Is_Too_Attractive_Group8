@@ -18,7 +18,11 @@ public class FallFromWorld : MonoBehaviour
     {
         if (transform.position.y < killFloor)
         {
-            transform.position = new Vector3(0f, 8f, -15f);
+            transform.position = new Vector3(0f, 4f, -15f);
         }
+
+        // Reset player position
+        if (Input.GetKeyDown(KeyCode.R))
+            transform.position = new Vector3(0f, 4f, -15f);
     }
 }
