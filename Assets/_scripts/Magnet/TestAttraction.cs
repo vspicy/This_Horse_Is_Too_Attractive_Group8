@@ -5,14 +5,14 @@ using UnityEngine;
 /*
  * Author: [Bose, Hayden]
  * Creation Date: [10-29-2025]
- * Summarization: [This script handles the attraction mechanic for the player, where the player can attract themselves to magnetic surfaces]
+ * Summary: [This script handles the attraction mechanic for the player, where the player can attract themselves to magnetic surfaces]
  */
 
 public class TestAttraction : MonoBehaviour
 {
-    private float attractionForce = 15f;
-    private float maxForce = 75f;
-    private float accelerationRate = 10f;
+    private float attractionForce = 5f;
+    private float maxForce = 30f;
+    private float accelerationRate = 2f;
     private float currentForceMultiplier = 0f;
     private bool playerInRange;
     private Rigidbody playerRB;
