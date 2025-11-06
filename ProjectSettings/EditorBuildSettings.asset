@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/TutorialLevel.unity
     guid: 0255e6e802dc3f24a8d1de3a00032e45
+  - enabled: 1
+    path: Assets/Scenes/LevelCompleteScene.unity
+    guid: 16aee16ab55f8d94abd9d71fb37718d6
   m_configObjects: {}
