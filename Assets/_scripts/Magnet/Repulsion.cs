@@ -82,6 +82,7 @@ public class Repulsion : MonoBehaviour
         if (playerMovement != null)
         {
             playerMovement.enabled = false;
+            magneticObject.material.color = Color.red;
             print("Movement script disabled for repulsion");
         }
         
