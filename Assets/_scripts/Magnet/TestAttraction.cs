@@ -16,9 +16,11 @@ public class TestAttraction : MonoBehaviour
     private float currentForceMultiplier = 0f;
     private bool playerInRange;
     private Rigidbody playerRB;
+
     void Start()
     {
         playerInRange = false;
+        
     }
 
     // On player exit, change InRange boolean to true
@@ -27,6 +29,7 @@ public class TestAttraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerRB = other.GetComponent<Rigidbody>();
+
             print("Player has entered range");
             playerInRange = true;
             currentForceMultiplier = 0f;
@@ -39,6 +42,7 @@ public class TestAttraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+
             print("Player has left range");
             playerRB = null;
         }

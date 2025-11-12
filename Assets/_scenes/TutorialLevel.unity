@@ -573,7 +573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107490387}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.57904476, y: -0.000014970909, z: -0.000010632739, w: 0.81529576}
+  m_LocalRotation: {x: -0.57904476, y: -0.000015027023, z: -0.000010672593, w: 0.81529576}
   m_LocalPosition: {x: 0.000013957764, y: 2.2106872, z: -18.23935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -861,6 +861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagneticSurface (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+      propertyPath: magnetMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1955,6 +1959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagneticSurface (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+      propertyPath: magnetMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2029,6 +2037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagneticSurface (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+      propertyPath: magnetMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2418,6 +2430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagneticSurface (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+      propertyPath: magnetMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3359,7 +3375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909837304}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.57904476, y: -0.000014970909, z: -0.000010632739, w: 0.81529576}
+  m_LocalRotation: {x: -0.57904476, y: -0.000015027023, z: -0.000010672593, w: 0.81529576}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3589,6 +3605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagneticSurface (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+      propertyPath: magnetMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3663,6 +3683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagneticSurface (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+      propertyPath: magnetMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3742,6 +3766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 270364299}
   playing: 1
+  finalTime: 0
 --- !u!4 &1097805038
 Transform:
   m_ObjectHideFlags: 0
@@ -4189,6 +4214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagneticSurface
       objectReference: {fileID: 0}
+    - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+      propertyPath: magnetMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4337,7 +4366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394392531}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.57904476, y: -0.000014970909, z: -0.000010632739, w: 0.81529576}
+  m_LocalRotation: {x: -0.57904476, y: -0.000015027023, z: -0.000010672593, w: 0.81529576}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
