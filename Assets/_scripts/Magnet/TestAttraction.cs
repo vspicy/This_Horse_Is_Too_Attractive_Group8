@@ -17,10 +17,16 @@ public class TestAttraction : MonoBehaviour
     private bool playerInRange;
     private Rigidbody playerRB;
 
+    [Header("Color Manager")]
+    [SerializeField]
+    private Renderer magneticObject;
+
+    private Color magnetColor = new Color(0.20f, 0.20f, 0.20f);
+
     void Start()
     {
         playerInRange = false;
-        
+        magneticObject.material.color = magnetColor;
     }
 
     // On player exit, change InRange boolean to true
@@ -42,9 +48,9 @@ public class TestAttraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-
             print("Player has left range");
             playerRB = null;
+            magneticObject.material.color = magnetColor;
         }
     }
 
@@ -59,6 +65,11 @@ public class TestAttraction : MonoBehaviour
         else
         {
             currentForceMultiplier = Mathf.MoveTowards(currentForceMultiplier, 0f, accelerationRate * Time.fixedDeltaTime); //slow down acceleration multiplier
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            magneticObject.material.color = magnetColor;
         }
     }
 
@@ -75,11 +86,13 @@ public class TestAttraction : MonoBehaviour
 
         // Apply force
         playerRB.AddForce(force, ForceMode.Force);
-
+      
         if (playerRB.velocity.magnitude > 15f)
         {
             playerRB.velocity = playerRB.velocity.normalized * 15f;
         }
+
+        magneticObject.material.color = Color.green;
 
     }
 }

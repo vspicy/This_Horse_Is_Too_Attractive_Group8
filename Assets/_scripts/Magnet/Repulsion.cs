@@ -18,6 +18,11 @@ public class Repulsion : MonoBehaviour
     // Reference to the player's Movement script
     private Movement playerMovement;
 
+    [Header("Color Manager")]
+    [SerializeField]
+    private Renderer magneticObject; // Reference to Object X
+    private Color magnetColor = new Color(0.20f, 0.20f, 0.20f); // Reference to color
+
     void Start()
     {
         playerInRange = false;
@@ -32,6 +37,7 @@ public class Repulsion : MonoBehaviour
             playerMovement = other.GetComponent<Movement>(); // Get the Movement script
             print("Player has entered range");
             playerInRange = true;
+            magneticObject.material.color = Color.gray;
         }
     }
 
@@ -44,6 +50,7 @@ public class Repulsion : MonoBehaviour
             playerRB = null;
             playerMovement = null;
             print("Player has left range");
+            magneticObject.material.color = magnetColor;
         }
     }
 
@@ -77,7 +84,7 @@ public class Repulsion : MonoBehaviour
             playerMovement.enabled = false;
             print("Movement script disabled for repulsion");
         }
-
+        
         // Calculate direction away from the surface
         Vector3 direction = (playerRB.position - transform.position).normalized;
 
