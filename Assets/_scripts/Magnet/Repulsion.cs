@@ -15,7 +15,7 @@ public class Repulsion : MonoBehaviour
     private float cooldownTime = 2f;
     private float lastRepulseTime;
     private bool playerInRange;
-    private float minDistance = 1.5f;
+    private float minDistance = 2f;
     private float maxDistance = 10f;
     private float currentCharge = 0f;
     private float chargeTime = 1f;
