@@ -10,9 +10,9 @@ using UnityEngine;
 
 public class TestAttraction : MonoBehaviour
 {
-    private float attractionForce = 5f;
-    private float maxForce = 30f;
-    private float accelerationRate = 2f;
+    private float attractionForce = 8f;
+    private float maxForce = 45f;
+    private float accelerationRate = 6f;
     private float currentForceMultiplier = 0f;
     private bool playerInRange;
     private Rigidbody playerRB;
