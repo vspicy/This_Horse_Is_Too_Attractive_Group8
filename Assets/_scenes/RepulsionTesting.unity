@@ -2012,7 +2012,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463394849}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1526810363
+--- !u!1001 &1577897702
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2021,28 +2021,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: 24.37
       objectReference: {fileID: 0}
     - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.7
+      value: -14.48
       objectReference: {fileID: 0}
     - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2072,101 +2060,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.132
       objectReference: {fileID: 0}
-    - target: {fileID: 860343700872756985, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: m_Name
       value: MagneticSurface (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726333635661966093, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: magneticField
       value: 
-      objectReference: {fileID: 1526810372}
+      objectReference: {fileID: 1577897703}
     - target: {fileID: 4429619722996745839, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: magneticObject
       value: 
-      objectReference: {fileID: 1526810372}
-    - target: {fileID: 5357891839433552449, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2000854207}
     - target: {fileID: 6422126176420722785, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
       propertyPath: magneticObject
       value: 
       objectReference: {fileID: 2000854207}
-    m_RemovedComponents:
-    - {fileID: 5357891839433552449, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1526810367}
-    - targetCorrespondingSourceObject: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1526810366}
-    - targetCorrespondingSourceObject: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1526810365}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
---- !u!1 &1526810364 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2197017178239764492, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-  m_PrefabInstance: {fileID: 1526810363}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1526810365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526810364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355eae9ac37f44841bd8b1a976eb2f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magneticObject: {fileID: 2000854207}
---- !u!114 &1526810366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526810364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b896cdb8142b643b5085a57b914634, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magneticObject: {fileID: 2000854207}
---- !u!114 &1526810367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526810364}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28d23e83b4ff344a9bf13ad92ad1b05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 12.5
---- !u!23 &1526810372 stripped
+--- !u!23 &1577897703 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3378107216604820878, guid: 9b16cb450eb497c47831d271fcb3f7f2, type: 3}
-  m_PrefabInstance: {fileID: 1526810363}
+  m_PrefabInstance: {fileID: 1577897702}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644415306
 GameObject:
@@ -3113,6 +3031,6 @@ SceneRoots:
   - {fileID: 460684846}
   - {fileID: 741484457}
   - {fileID: 506707831}
-  - {fileID: 1526810363}
+  - {fileID: 1577897702}
   - {fileID: 383909025}
   - {fileID: 719498999}

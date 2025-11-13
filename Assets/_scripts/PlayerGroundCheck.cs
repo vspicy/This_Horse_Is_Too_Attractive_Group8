@@ -31,7 +31,7 @@ public class PlayerGroundCheck : MonoBehaviour
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + groundCheckOffset, groundLayer, QueryTriggerInteraction.Ignore);
 
         // Detect landing
-        if (!wasGrounded && isGrounded)
+        if (isGrounded)
         {
             Debug.Log("Player has landed on the ground.");
             ReenableMovement();
