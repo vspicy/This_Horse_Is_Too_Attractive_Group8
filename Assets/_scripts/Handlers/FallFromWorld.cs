@@ -29,9 +29,9 @@ public class FallFromWorld : MonoBehaviour
     {
         if (transform.position.y < killFloor)
         {
+            deathCount++;
             deathCountDisplay.text = "Death Count: " + deathCount.ToString();
             transform.position = new Vector3(0f, 4f, -15f);
-            deathCount = deathCount + 1;
         }
     } 
 }
