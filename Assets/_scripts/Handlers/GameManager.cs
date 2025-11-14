@@ -12,19 +12,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public float restart = 0f;
     public GameObject completeLevelUI;
     public GameObject UI;
     
     [Header("References")]
     public Timer timer;
     [SerializeField] private Movement playerMovement;
+    [SerializeField] private RestartLevel restart;
     public TMP_Text finalTime; // Get reference to the Final Time text object
-    public int sceneToLoad;
-
-    public int restartScene;
-    public int backToMenu;
-    public GameObject horse;
 
     /// <summary>
     /// Play when the Level Completes
@@ -35,6 +30,9 @@ public class GameManager : MonoBehaviour
         completeLevelUI.SetActive(true);
         UI.SetActive(false);
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         timer.playing = false;
         finalTime.text = "Time: " + timer.minutes.ToString("00") + ":" + timer.seconds.ToString("00") + "." + timer.milliseconds.ToString("00"); // Show the player's final time when the stopwatch ends
 
@@ -42,28 +40,7 @@ public class GameManager : MonoBehaviour
         if (playerMovement != null)
         {
             playerMovement.enabled = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.R)) // Restart Level
-        {
-            SceneManager.LoadScene(restartScene);
-            completeLevelUI.SetActive(false);
-            UI.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q)) // Load Menu
-        {
-            SceneManager.LoadScene(backToMenu);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return)) // Load Next Level
-        {
-            SceneManager.LoadScene(sceneToLoad);
-        }
-
-        if (Input.GetKeyDown(KeyCode.H)) // Just do this
-        {
-            horse.SetActive(true);
+            restart.enabled = false;
         }
     }
             
