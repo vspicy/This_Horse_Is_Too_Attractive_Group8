@@ -20,9 +20,9 @@ public class Timer : MonoBehaviour
     public float finalTime;
 
     [Header("Time")]
-    int minutes;
-    int seconds;
-    int milliseconds;
+    public int minutes;
+    public int seconds;
+    public int milliseconds;
 
     // Update is called once per frame
     void Update()
