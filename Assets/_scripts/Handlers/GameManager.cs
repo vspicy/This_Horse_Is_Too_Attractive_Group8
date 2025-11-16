@@ -19,9 +19,7 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     [SerializeField] private Movement playerMovement;
     [SerializeField] private RestartLevel restart;
-    [SerializeField] private FallFromWorld deathCount;
     public TMP_Text finalTime; // Get reference to the Final Time text object
-    public TMP_Text finalDeath; // Get reference to the Final Death text object
 
     /// <summary>
     /// Play when the Level Completes
@@ -37,7 +35,6 @@ public class GameManager : MonoBehaviour
 
         timer.playing = false;
         finalTime.text = "Time: " + timer.minutes.ToString("00") + ":" + timer.seconds.ToString("00") + "." + timer.milliseconds.ToString("00"); // Show the player's final time when the stopwatch ends
-        finalDeath.text = "Deaths: " + deathCount.deathCount.ToString();
 
         // Disable the Movement script because the level is complete
         if (playerMovement != null)
