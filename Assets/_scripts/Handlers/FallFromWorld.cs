@@ -12,7 +12,7 @@ using TMPro;
 public class FallFromWorld : MonoBehaviour
 {
     public TMP_Text deathCountDisplay;
-    private int deathCount;
+    public int deathCount;
 
     // Get y coord threshold (designated kill level)
     public float killFloor;
@@ -22,6 +22,15 @@ public class FallFromWorld : MonoBehaviour
     {
         deathCount = 0;
         deathCountDisplay.text = "Death Count: " + deathCount.ToString();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))  // Reset death count everytime the player restarts manually
+        {
+            deathCount = 0;
+            deathCountDisplay.text = "Death Count: " + deathCount.ToString();
+        }
     }
 
     // Call this update at fixed time intervals
