@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 79961412165745633}
   - component: {fileID: 8769599693924102054}
   - component: {fileID: 4429619722996745839}
-  - component: {fileID: 6422126176420722785}
   m_Layer: 6
   m_Name: AttractiveMagneticSurface
   m_TagString: Untagged
@@ -65,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a3de9ab6ab193948a258c6b0ebe496b, type: 2}
+  - {fileID: 2100000, guid: a819bbd33f8ea7c4790808d570c55aa3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,15 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b896cdb8142b643b5085a57b914634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6422126176420722785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2197017178239764492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355eae9ac37f44841bd8b1a976eb2f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  magneticObject: {fileID: 0}

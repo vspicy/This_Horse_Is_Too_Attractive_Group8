@@ -9,6 +9,7 @@ using UnityEngine;
  */
 public class Repulsion : MonoBehaviour
 {
+    public GameObject repulsionArrow;
     private float repulsionForce = 25f;
     private float minForce = 5f;
     private float maxForce = 25f;
@@ -105,6 +106,11 @@ public class Repulsion : MonoBehaviour
             // Checks if fully charged
             if (currentCharge >= 1f && !fullyCharged)
             {
+                if (repulsionArrow != null)
+                {
+                    repulsionArrow.SetActive(true);
+                    UpdateArrowDirection();
+                }
                 fullyCharged = true;
                 magneticObject.material.color = Color.red;
                 Debug.Log("Repulsion fully charged!");
@@ -117,6 +123,11 @@ public class Repulsion : MonoBehaviour
             playerRB.useGravity = true;
             playerMovement.enabled = true;
 
+            if (repulsionArrow != null)
+            {
+                repulsionArrow.SetActive(false);
+            }
+
             if (fullyCharged && playerInRange)
             {
                 Repulse();
@@ -126,6 +137,24 @@ public class Repulsion : MonoBehaviour
             ResetCharge();
             
         }
+    }
+
+    private void UpdateArrowDirection()
+    {
+        if (playerRB == null || repulsionArrow == null) return;
+
+        // Direction **away from player to magnet** inverted so arrow points opposite
+        Vector3 directionAwayFromMagnet = (playerRB.position - transform.position).normalized; // player away from magnet
+        directionAwayFromMagnet *= -1f; // invert direction
+
+        if (directionAwayFromMagnet == Vector3.zero) return;
+
+        // LookRotation aligns Z+ with the direction
+        Quaternion lookRotation = Quaternion.LookRotation(directionAwayFromMagnet);
+
+        // Apply offset depending on arrow model (Y+ tip)
+        Quaternion modelOffset = Quaternion.Euler(-90f, 0f, 0f);
+        repulsionArrow.transform.rotation = lookRotation * modelOffset;
     }
 
     public void Repulse()
