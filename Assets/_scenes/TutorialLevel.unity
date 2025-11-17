@@ -707,7 +707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107490387}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5838229, y: -0.000009181434, z: -0.0000066023604, w: 0.81188107}
+  m_LocalRotation: {x: -0.5838229, y: -0.0000092931905, z: -0.0000066827256, w: 0.81188107}
   m_LocalPosition: {x: 0.000015504838, y: 2.210688, z: -18.681372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3577,7 +3577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909837304}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5838229, y: -0.000009181434, z: -0.0000066023604, w: 0.81188107}
+  m_LocalRotation: {x: -0.5838229, y: -0.0000092931905, z: -0.0000066827256, w: 0.81188107}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4938,7 +4938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394392531}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5838229, y: -0.000009181434, z: -0.0000066023604, w: 0.81188107}
+  m_LocalRotation: {x: -0.5838229, y: -0.0000092931905, z: -0.0000066827256, w: 0.81188107}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6943,7 +6943,8 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 4, z: -15}
   deathCountDisplay: {fileID: 1388133864}
   deathCount: 0
-  checkpoint: []
+  checkpoint:
+  - {fileID: 7584069096694028908}
   checkpointPos: {x: 0, y: 0, z: 0}
 --- !u!114 &2146387434
 MonoBehaviour:
