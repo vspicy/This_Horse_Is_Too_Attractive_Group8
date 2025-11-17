@@ -18,7 +18,7 @@ public class FallFromWorld : MonoBehaviour
     [Header("DeathCounter")]
     public TMP_Text deathCountDisplay;
     [SerializeField]
-    private int deathCount;
+    public int deathCount;
 
     [Header("Checkpoints")]
     [SerializeField]
@@ -33,6 +33,15 @@ public class FallFromWorld : MonoBehaviour
         deathCountDisplay.text = "Death Count: " + deathCount.ToString();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            deathCount = 0;
+            deathCountDisplay.text = "Death Count: " + deathCount.ToString();
+        }
+    }
+
     // Call this update at fixed time intervals
     private void FixedUpdate()
     {
@@ -40,10 +49,7 @@ public class FallFromWorld : MonoBehaviour
         {
             deathCount++; // Increment to the death counter
             deathCountDisplay.text = "Death Count: " + deathCount.ToString();
-            transform.position = new Vector3(0f, 4f, -15f);
-
             transform.position = new Vector3(playerPosition.x, playerPosition.y, playerPosition.z);
-
         }
     }
 
