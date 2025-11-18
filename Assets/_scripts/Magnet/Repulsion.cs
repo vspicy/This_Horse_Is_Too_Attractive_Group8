@@ -22,7 +22,7 @@ public class Repulsion : MonoBehaviour
     private float chargeTime = 1f;
     private bool fullyCharged = false;
     private float distanceFromPlayer;
-    private float slowForce = 15;
+    private float slowForce = 25;
     private Rigidbody playerRB;
 
     // Reference to the player's Movement script
@@ -61,6 +61,9 @@ public class Repulsion : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerRB.useGravity = true;
+            playerBehaviour.enabled = true;
+            testAttraction.enabled = true;
+            repulsionArrow.SetActive(false);
             playerInRange = false;
             playerRB = null;
             playerMovement = null;
