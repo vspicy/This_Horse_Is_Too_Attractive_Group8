@@ -16,7 +16,7 @@ public class Repulsion : MonoBehaviour
     private float cooldownTime = 2f;
     private float lastRepulseTime;
     private bool playerInRange;
-    private float minDistance = 2f;
+    private float minDistance = 2.5f;
     private float maxDistance = 10f;
     private float currentCharge = 0f;
     private float chargeTime = 1f;
@@ -103,6 +103,8 @@ public class Repulsion : MonoBehaviour
             playerMovement.enabled = false;
             playerBehaviour.enabled = false;
             testAttraction.enabled = false;
+            repulsionArrow.SetActive(true);
+            UpdateArrowDirection();
 
 
             // Slows player towards zero velocity
@@ -115,11 +117,6 @@ public class Repulsion : MonoBehaviour
             // Checks if fully charged
             if (currentCharge >= 1f && !fullyCharged)
             {
-                if (repulsionArrow != null)
-                {
-                    repulsionArrow.SetActive(true);
-                    UpdateArrowDirection();
-                }
                 fullyCharged = true;
                 magneticObject.material.color = Color.red;
                 Debug.Log("Repulsion fully charged!");
