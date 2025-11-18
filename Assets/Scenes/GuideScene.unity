@@ -1300,17 +1300,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD + Space: Move and Jump
+  m_text: 'WASD + Space + Shift: Move and Jump and Sprint
 
     Hold Left Mouse: Attract
 
-    Hold Right
-    Mouse: Charge Repel
+    Hold
+    Right Mouse: Charge Repel
 
-    Release Right Mouse When Charged: Repel
+    When Magnet on Head Turns Red: Repulsion Fully
+    Charged
 
-    Press R:
-    Restart Level
+    Release Right Mouse When Fully Charged: Repel
+
+    Press R: Restart
+    Level
 
     Green Spheres: Checkpoints
 
@@ -1323,14 +1326,11 @@ MonoBehaviour:
     Aditional Info:
 
     While charging the repulsion
-    mechanic you cannot attract. If you want to cancel the repulsion, just let go
-    before fully charged. You will know when the repulsion is fully charged when
-    the magnet on the horse model''s head changes to red and a red arrow indicating
-    the direction you will launch appears. The closer you are to the magnet the stronger
-    the repulse effect will be. There is a timer at the top and a death counter at
-    the bottom left. While there is no time limit, try to see how fast you can get
-    to the end while trying to keep as little deaths as possible. Don''t forget to
-    Have Fun!'
+    mechanic you cannot attract. The closer you are to the magnet the stronger the
+    repulse effect will be. There is a timer at the top and a death counter at the
+    bottom left. While there is no time limit, try to see how fast you can get to
+    the end while trying to keep as little deaths as possible. Don''t forget to Have
+    Fun!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
