@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b896cdb8142b643b5085a57b914634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magneticObject: {fileID: 0}
 --- !u!114 &6422126176420722785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355eae9ac37f44841bd8b1a976eb2f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  repulsionArrow: {fileID: 0}
+  testAttraction: {fileID: 4429619722996745839}
+  magneticObject: {fileID: 0}
