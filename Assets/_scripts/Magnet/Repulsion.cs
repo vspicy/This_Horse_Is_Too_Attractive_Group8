@@ -28,6 +28,9 @@ public class Repulsion : MonoBehaviour
     // Reference to the player's Movement script
     private Movement playerMovement;
 
+    private PlayerBehaviour playerBehaviour;
+    public TestAttraction testAttraction;
+
     [Header("Color Manager")]
     [SerializeField]
     private Renderer magneticObject; // Reference to Object X
@@ -36,6 +39,7 @@ public class Repulsion : MonoBehaviour
     void Start()
     {
         playerInRange = false;
+        playerBehaviour = FindObjectOfType<PlayerBehaviour>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -94,6 +98,8 @@ public class Repulsion : MonoBehaviour
 
             playerRB.useGravity = false;
             playerMovement.enabled = false;
+            playerBehaviour.enabled = false;
+            testAttraction.enabled = false;
 
 
             // Slows player towards zero velocity
@@ -122,6 +128,8 @@ public class Repulsion : MonoBehaviour
         {
             playerRB.useGravity = true;
             playerMovement.enabled = true;
+            playerBehaviour.enabled = true;
+            testAttraction.enabled = true;
 
             if (repulsionArrow != null)
             {

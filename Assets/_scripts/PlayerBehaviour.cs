@@ -68,7 +68,7 @@ public class PlayerBehaviour : MonoBehaviour
           //  player.forward = dirToCombatLookAt.normalized;
        // }
     }
-
+    
     private void FixedUpdate()
     {
         // Find and rotate orientation
@@ -96,5 +96,5 @@ public class PlayerBehaviour : MonoBehaviour
 
             player.forward = dirToCombatLookAt.normalized;
         }
-    }
+    } 
 }
