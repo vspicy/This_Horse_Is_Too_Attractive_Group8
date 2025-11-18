@@ -1300,14 +1300,37 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD: Move
+  m_text: 'WASD + Space: Move and Jump
 
-    Left Mouse Button: Attract
+    Hold Left Mouse: Attract
 
-    Right Mouse Button: Repel
+    Hold Right
+    Mouse: Charge Repel
 
-    R:
-    Restart Level'
+    Release Right Mouse When Charged: Repel
+
+    Press R:
+    Restart Level
+
+    Green Spheres: Checkpoints
+
+    Blue Magnets: Only Attract
+
+    Red
+    Magnets: Only Repulse
+
+
+    Aditional Info:
+
+    While charging the repulsion
+    mechanic you cannot attract. If you want to cancel the repulsion, just let go
+    before fully charged. You will know when the repulsion is fully charged when
+    the magnet on the horse model''s head changes to red and a red arrow indicating
+    the direction you will launch appears. The closer you are to the magnet the stronger
+    the repulse effect will be. There is a timer at the top and a death counter at
+    the bottom left. While there is no time limit, try to see how fast you can get
+    to the end while trying to keep as little deaths as possible. Don''t forget to
+    Have Fun!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1334,14 +1357,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
