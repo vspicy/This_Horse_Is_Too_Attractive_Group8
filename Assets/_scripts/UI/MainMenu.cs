@@ -23,8 +23,25 @@ public class MainMenu : MonoBehaviour
     /// This switches the scenes
     /// </summary>
     /// <param name="sceneIndex"></param>
-    public void SwitchScene(int sceneIndex)
+    /// 
+
+    public void SwitchScene0()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(0);
+    }
+
+    public void SwitchScene1()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void SwitchScene2()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void SwitchScene3()
+    {
+        SceneManager.LoadScene(2);
     }
 }

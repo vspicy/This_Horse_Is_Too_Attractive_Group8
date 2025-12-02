@@ -20,9 +20,9 @@ public class Timer : MonoBehaviour
     public float finalTime;
 
     [Header("Time")]
-    int minutes;
-    int seconds;
-    int milliseconds;
+    public int minutes;
+    public int seconds;
+    public int milliseconds;
 
     // Update is called once per frame
     void Update()
@@ -30,14 +30,10 @@ public class Timer : MonoBehaviour
         Stopwatch();
         finalTime = givenTime;
 
-
         if (Input.GetKeyDown(KeyCode.R))
         {
-            minutes = 0;
-            seconds = 0;
-            milliseconds = 0;
+            ResetTimer();
         }
-
     }
 
     /// <summary>
@@ -55,7 +51,11 @@ public class Timer : MonoBehaviour
 
             time.text = "Time: " + minutes.ToString("00") + ":" + seconds.ToString("00") + "." + milliseconds.ToString("00"); // Display time on the screen
         }
+    }
 
+    public void ResetTimer()
+    {
+        givenTime = 0;
     }
 }
 

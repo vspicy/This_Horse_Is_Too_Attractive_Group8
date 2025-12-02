@@ -11,26 +11,19 @@ using UnityEngine.SceneManagement;
 public class LevelComplete : MonoBehaviour
 {
     public int sceneToLoad;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public GameManager levelComplete;
+    
     // this is for whent he player collides with the box collider and switches scene
     private void OnTriggerEnter(Collider other)
     {
+        levelComplete.LevelComplete(); // Run Manager Level Complete
         // check if the player entered the trigger
+        /*
         if (other.CompareTag("Player"))
         {
             // load the new scene
             SceneManager.LoadScene(sceneToLoad);
         }
+        */
     }
 }

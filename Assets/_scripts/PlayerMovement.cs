@@ -6,7 +6,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     /*
-     * Authors: [Ruffner, Kaylie]
+     * Authors: [Ruffner, Kaylie], [Phurchpean, Ian]
      * Creation Date: [9-27-2025]
      * Summary: Handles the player's movement including walking, sprinting, jumping, slopes, and magnet effects.
      */
