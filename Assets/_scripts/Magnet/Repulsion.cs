@@ -30,6 +30,7 @@ public class Repulsion : MonoBehaviour
 
     private PlayerBehaviour playerBehaviour;
     public TestAttraction testAttraction;
+    public RepulsionTransform repuslionTransform;
 
     [Header("Color Manager")]
     [SerializeField]
