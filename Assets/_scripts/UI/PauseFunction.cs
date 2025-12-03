@@ -30,6 +30,9 @@ public class PauseFunction : MonoBehaviour
             if (!paused)
             {
                 Pause();
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
             {
@@ -52,4 +55,6 @@ public class PauseFunction : MonoBehaviour
         pauseMenu.SetActive(false);
         paused = false;
     }
+
+   
 }
