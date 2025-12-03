@@ -11,13 +11,16 @@ using UnityEngine;
 public class PauseFunction : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public bool paused; 
+    public bool paused;
+    public bool howtoplay = false;
+    public GameObject htpMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
         paused = false;
+        
     }
 
     // Update is called once per frame
@@ -56,5 +59,18 @@ public class PauseFunction : MonoBehaviour
         paused = false;
     }
 
-   
+    // how to play menu visibility
+   public void HowToPlay()
+    {
+        if (howtoplay)
+        {
+            htpMenu.SetActive(false);
+            howtoplay = false;
+        }
+        else
+        {
+            htpMenu.SetActive(true);
+            howtoplay = true;
+        }
+    }
 }
