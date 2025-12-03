@@ -1415,6 +1415,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621551599}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 87512770}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repuslionTransform
       value: 
       objectReference: {fileID: 87512770}

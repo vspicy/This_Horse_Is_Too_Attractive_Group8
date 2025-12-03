@@ -143,6 +143,7 @@ public class Repulsion : MonoBehaviour
             if (fullyCharged && playerInRange)
             {
                 Repulse();
+                repulsionTransform.enabled = false;
                 lastRepulseTime = Time.time;
             }
 
