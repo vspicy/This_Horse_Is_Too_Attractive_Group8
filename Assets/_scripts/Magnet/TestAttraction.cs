@@ -20,7 +20,7 @@ public class TestAttraction : MonoBehaviour
     [Header("Color Manager")]
     [SerializeField]
     private Renderer magneticObject;
-
+    private Movement playerMovement;
     private Color magnetColor = new Color(0.20f, 0.20f, 0.20f);
 
     void Start()
@@ -35,7 +35,7 @@ public class TestAttraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerRB = other.GetComponent<Rigidbody>();
-
+            playerMovement = other.GetComponent<Movement>();
             print("Player has entered range");
             playerInRange = true;
             currentForceMultiplier = 0f;
@@ -48,6 +48,7 @@ public class TestAttraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            playerMovement = null;
             print("Player has left range");
             playerRB = null;
             magneticObject.material.color = magnetColor;
@@ -90,6 +91,11 @@ public class TestAttraction : MonoBehaviour
         if (playerRB.velocity.magnitude > 15f)
         {
             playerRB.velocity = playerRB.velocity.normalized * 15f;
+        }
+
+        if (playerMovement.enabled == false)
+        {
+            playerMovement.enabled = true;
         }
 
         magneticObject.material.color = Color.green;

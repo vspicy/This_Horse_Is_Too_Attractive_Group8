@@ -30,7 +30,7 @@ public class Repulsion : MonoBehaviour
 
     private PlayerBehaviour playerBehaviour;
     public TestAttraction testAttraction;
-    public RepulsionTransform repuslionTransform;
+    public RepulsionTransform repulsionTransform;
 
     [Header("Color Manager")]
     [SerializeField]
@@ -40,6 +40,7 @@ public class Repulsion : MonoBehaviour
     void Start()
     {
         playerInRange = false;
+        repulsionTransform.enabled = false;
         playerBehaviour = FindObjectOfType<PlayerBehaviour>();
     }
 
@@ -64,6 +65,7 @@ public class Repulsion : MonoBehaviour
             playerRB.useGravity = true;
             playerBehaviour.enabled = true;
             testAttraction.enabled = true;
+            repulsionTransform.enabled = false;
             repulsionArrow.SetActive(false);
             playerInRange = false;
             playerRB = null;
@@ -120,6 +122,7 @@ public class Repulsion : MonoBehaviour
             {
                 fullyCharged = true;
                 magneticObject.material.color = Color.red;
+                repulsionTransform.enabled = true;
                 Debug.Log("Repulsion fully charged!");
             }
         }

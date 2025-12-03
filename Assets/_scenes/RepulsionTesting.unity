@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 87512767}
   - component: {fileID: 87512768}
   - component: {fileID: 87512769}
+  - component: {fileID: 87512770}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -410,6 +411,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca565b489fc37b468d49335d7510465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 0
+--- !u!114 &87512770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87512758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a4f20e453a0f14599d92a3e404facb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &106151809
@@ -1400,6 +1414,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1621551599}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repuslionTransform
+      value: 
+      objectReference: {fileID: 87512770}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
