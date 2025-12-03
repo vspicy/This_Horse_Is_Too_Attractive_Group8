@@ -10683,7 +10683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e4bb29bfdba649970c47f9f2cf832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 4
+  sceneToLoad: 3
   levelComplete: {fileID: 855865296}
 --- !u!33 &8053562652278276711
 MeshFilter:
