@@ -5,6 +5,7 @@ using UnityEngine;
 public class RepulsionTransform : MonoBehaviour
 {
     private float moveSpeed = 2;
+    public Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,32 +23,38 @@ public class RepulsionTransform : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            //playerTransform.localPosition += Vector3.left * moveSpeed * Time.deltaTime;
+            playerTransform.Translate(Vector3.left * moveSpeed * Time.deltaTime, Space.Self);
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+            //playerTransform.localPosition += Vector3.forward * moveSpeed * Time.deltaTime;
+            playerTransform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.Self);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.back * moveSpeed * Time.deltaTime;
+            //playerTransform.localPosition += Vector3.back * moveSpeed * Time.deltaTime;
+            playerTransform.Translate(Vector3.back * moveSpeed * Time.deltaTime, Space.Self);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            //playerTransform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            playerTransform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.Self);
         }
 
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+            //playerTransform.position += Vector3.up * moveSpeed * Time.deltaTime;
+            playerTransform.Translate(Vector3.up * moveSpeed * Time.deltaTime, Space.Self);
         }
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            transform.position += Vector3.down * moveSpeed * Time.deltaTime;
+            //playerTransform.position += Vector3.down * moveSpeed * Time.deltaTime;
+            playerTransform.Translate(Vector3.down * moveSpeed * Time.deltaTime, Space.Self);
         }
     }
 }
