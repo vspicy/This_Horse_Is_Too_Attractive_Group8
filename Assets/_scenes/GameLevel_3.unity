@@ -320,7 +320,10 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 6, z: -12}
   deathCountDisplay: {fileID: 1173765504}
   deathCount: 0
-  checkpoint: []
+  checkpoint:
+  - {fileID: 546992200}
+  - {fileID: 1093782644}
+  - {fileID: 2082181364}
   checkpointPos: {x: 0, y: 0, z: 0}
 --- !u!114 &201401971
 MonoBehaviour:
@@ -1482,6 +1485,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d28628ee98426e4a9e62c99618c769b, type: 3}
+--- !u!1 &546992200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6990812460741256112, guid: 4d28628ee98426e4a9e62c99618c769b, type: 3}
+  m_PrefabInstance: {fileID: 546992199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &550900003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,7 +2345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731376239}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.33786678, y: -0.000000016194544, z: -0.000000005813466, w: 0.94119394}
+  m_LocalRotation: {x: -0.33786678, y: 0.000000016194539, z: 0.0000000058134644, w: 0.94119394}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3610,6 +3618,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d28628ee98426e4a9e62c99618c769b, type: 3}
+--- !u!1 &1093782644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6990812460741256112, guid: 4d28628ee98426e4a9e62c99618c769b, type: 3}
+  m_PrefabInstance: {fileID: 1093782643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1094365804
 GameObject:
   m_ObjectHideFlags: 0
@@ -7394,6 +7407,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d28628ee98426e4a9e62c99618c769b, type: 3}
+--- !u!1 &2082181364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6990812460741256112, guid: 4d28628ee98426e4a9e62c99618c769b, type: 3}
+  m_PrefabInstance: {fileID: 2082181363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2140190888
 GameObject:
   m_ObjectHideFlags: 0
