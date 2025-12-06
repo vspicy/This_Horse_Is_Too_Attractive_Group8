@@ -990,6 +990,8 @@ MonoBehaviour:
   paused: 0
   howtoplay: 0
   htpMenu: {fileID: 436686564}
+  restart: {fileID: 1476131513}
+  checkpointRestart: {fileID: 1476131516}
 --- !u!4 &141194578
 Transform:
   m_ObjectHideFlags: 0
@@ -2274,7 +2276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435021405}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.333554, y: -0.0000038419303, z: -0.0000013593392, w: 0.942731}
+  m_LocalRotation: {x: -0.33355403, y: -0.0000038831713, z: -0.0000013739311, w: 0.942731}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2539,6 +2541,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3023,6 +3029,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3104,6 +3114,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4152,6 +4166,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5099,7 +5117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970380552}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.333554, y: -0.0000038419303, z: -0.0000013593392, w: 0.942731}
+  m_LocalRotation: {x: -0.33355403, y: -0.0000038831713, z: -0.0000013739311, w: 0.942731}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6126,6 +6144,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6541,6 +6563,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7300,6 +7326,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7515,6 +7545,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8018,8 +8052,10 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 6, z: -12}
   deathCountDisplay: {fileID: 1388133864}
   deathCount: 0
-  checkpoint: []
-  checkpointPos: {x: 0, y: 0, z: 0}
+  checkpoint:
+  - {fileID: 7584069096694028908}
+  - {fileID: 1922519693}
+  checkpointPos: {x: 0, y: 4, z: -15}
 --- !u!114 &1476131517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8476,7 +8512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -275, y: 0}
+  m_AnchoredPosition: {x: -275, y: 73}
   m_SizeDelta: {x: 275, y: 65}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1507400718
@@ -8499,7 +8535,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press 'R' To Restart  \n"
+  m_text: 'R: Restart Level
+
+
+    E: Return to Last Checkpoint
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9254,7 +9295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626917674}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.333554, y: -0.0000038419303, z: -0.0000013593392, w: 0.942731}
+  m_LocalRotation: {x: -0.33355403, y: -0.0000038831713, z: -0.0000013739311, w: 0.942731}
   m_LocalPosition: {x: 0.000020608608, y: 2.2106805, z: -37.32875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11070,6 +11111,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11386,7 +11431,7 @@ Transform:
   m_GameObject: {fileID: 1922519693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1952591, y: 27.17, z: 245.21}
+  m_LocalPosition: {x: -0.1952591, y: 27.17, z: 235}
   m_LocalScale: {x: 1.7493095, y: 1.7493095, z: 1.7493095}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -12336,6 +12381,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1476131522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12672,7 +12721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139395085}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.33355403, y: -0.0000038831713, z: -0.0000013739311, w: 0.942731}
+  m_LocalRotation: {x: -0.333554, y: -0.0000038419303, z: -0.0000013593392, w: 0.942731}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -14,6 +14,7 @@ public class FallFromWorld : MonoBehaviour
     // Get y coord threshold (designated kill level)
     public float killFloor;
     public Vector3 playerPosition;
+    private Rigidbody rigidBody;
 
     [Header("DeathCounter")]
     public TMP_Text deathCountDisplay;
@@ -29,6 +30,7 @@ public class FallFromWorld : MonoBehaviour
 
     void Start()
     {
+        rigidBody = GetComponent<Rigidbody>();
         deathCount = 0;
         deathCountDisplay.text = "Death Count: " + deathCount.ToString();
     }
@@ -39,6 +41,12 @@ public class FallFromWorld : MonoBehaviour
         {
             deathCount = 0;
             deathCountDisplay.text = "Death Count: " + deathCount.ToString();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E)) // Restart from last known checkpoint
+        {
+            transform.position = checkpointPos;
+            rigidBody.velocity = Vector3.zero; // Reset velocity of player
         }
     }
 

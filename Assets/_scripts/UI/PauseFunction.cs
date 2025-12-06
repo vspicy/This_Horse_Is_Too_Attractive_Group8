@@ -15,12 +15,16 @@ public class PauseFunction : MonoBehaviour
     public bool howtoplay = false;
     public GameObject htpMenu;
 
+    // Get reference to these two scripts right here to prevent certain inputs
+    [SerializeField] private RestartLevel restart;
+    [SerializeField] private FallFromWorld checkpointRestart;
+
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
         paused = false;
-        
+        Time.timeScale = 1; // Always set the scale of time to standard on level startup
     }
 
     // Update is called once per frame
@@ -37,7 +41,7 @@ public class PauseFunction : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
-            else
+            else if (paused) // Pressing Escape again will allow you to re-enter the game safely
             {
                 Unpause();
             }
@@ -46,6 +50,10 @@ public class PauseFunction : MonoBehaviour
     // pauses the game
     void Pause()
     {
+        // While paused, the player cannot restart
+        restart.enabled = false;
+        checkpointRestart.enabled = false;
+
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         paused = true;
@@ -54,8 +62,14 @@ public class PauseFunction : MonoBehaviour
     // unpauses the game
     void Unpause()
     {
+        // While unpaused, the player can restart
+        restart.enabled = true;
+        checkpointRestart.enabled = true;
+
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        htpMenu.SetActive(false);
+        Cursor.visible = false;
         paused = false;
     }
 
