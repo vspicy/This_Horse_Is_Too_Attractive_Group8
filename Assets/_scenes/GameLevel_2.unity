@@ -255,6 +255,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -592,6 +596,10 @@ PrefabInstance:
       propertyPath: testAttraction
       value: 
       objectReference: {fileID: 1037302347}
+    - target: {fileID: 6422126176420722785, guid: 0604a72c4ccf85544a686dda8e2c4873, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -809,6 +817,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1010,6 +1022,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1354,6 +1370,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 321682486}
   paused: 0
+  howtoplay: 0
+  htpMenu: {fileID: 0}
+  restart: {fileID: 0}
+  checkpointRestart: {fileID: 0}
 --- !u!4 &296761739
 Transform:
   m_ObjectHideFlags: 0
@@ -1800,6 +1820,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3043,6 +3067,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4367,6 +4395,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4880,6 +4912,7 @@ GameObject:
   - component: {fileID: 1186684228}
   - component: {fileID: 1186684227}
   - component: {fileID: 1186684226}
+  - component: {fileID: 1186684235}
   m_Layer: 0
   m_Name: PlayerObject (1)
   m_TagString: Player
@@ -5074,6 +5107,19 @@ Transform:
   - {fileID: 1948725950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
+--- !u!114 &1186684235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186684225}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a4f20e453a0f14599d92a3e404facb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1186684234}
 --- !u!1 &1192527830
 GameObject:
   m_ObjectHideFlags: 0
@@ -5433,6 +5479,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6170,6 +6220,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6402,6 +6456,10 @@ PrefabInstance:
       propertyPath: testAttraction
       value: 
       objectReference: {fileID: 1037302347}
+    - target: {fileID: 6422126176420722785, guid: 0604a72c4ccf85544a686dda8e2c4873, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6984,6 +7042,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7166,6 +7228,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7987,6 +8053,10 @@ PrefabInstance:
       propertyPath: testAttraction
       value: 
       objectReference: {fileID: 1037302347}
+    - target: {fileID: 6422126176420722785, guid: 0604a72c4ccf85544a686dda8e2c4873, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8182,6 +8252,10 @@ PrefabInstance:
       propertyPath: testAttraction
       value: 
       objectReference: {fileID: 1037302347}
+    - target: {fileID: 6422126176420722785, guid: 0604a72c4ccf85544a686dda8e2c4873, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8814,6 +8888,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9019,6 +9097,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9953,6 +10035,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1948725949}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: repulsionTransform
+      value: 
+      objectReference: {fileID: 1186684235}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10034,7 +10120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106887499}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.33069348, y: -1e-45, z: -1e-45, w: 0.9437382}
+  m_LocalRotation: {x: -0.33069348, y: 3e-45, z: 1e-45, w: 0.9437382}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
