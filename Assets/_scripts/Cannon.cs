@@ -9,7 +9,7 @@ public class Cannon : MonoBehaviour
     public GameObject cannonBallPrefab;
     private Vector3 cannonBallVelocity;
     private float cannonFireRate = 2;
-    private float cannonBallStrength = 16;
+    private float cannonBallStrength = 20;
     // Start is called before the first frame update
     void Start()
     {
