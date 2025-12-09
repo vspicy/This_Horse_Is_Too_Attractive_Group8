@@ -1518,7 +1518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -275, y: 0}
+  m_AnchoredPosition: {x: -275, y: 73.3}
   m_SizeDelta: {x: 275, y: 65}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &249247594
@@ -1541,7 +1541,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press 'R' To Restart  \n"
+  m_text: 'R: Restart Level
+
+
+    E: Return to Last Checkpoint
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10875,7 +10881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106887499}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.33069348, y: -1e-45, z: -0, w: 0.9437382}
+  m_LocalRotation: {x: -0.33069348, y: 3e-45, z: 1e-45, w: 0.9437382}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
