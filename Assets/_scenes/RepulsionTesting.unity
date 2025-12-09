@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 87512768}
   - component: {fileID: 87512769}
   - component: {fileID: 87512770}
+  - component: {fileID: 87512771}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -427,6 +428,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 87512759}
+--- !u!114 &87512771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87512758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4ae758a0f0d094daca31081f40dfb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repulsionTransform: {fileID: 87512770}
+  cannonBallPrefab: {fileID: 8077904033454342229, guid: 1404e6fd8f71a074eb606c26a34f48f7, type: 3}
 --- !u!1 &106151809
 GameObject:
   m_ObjectHideFlags: 0

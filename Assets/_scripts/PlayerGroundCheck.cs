@@ -33,7 +33,7 @@ public class PlayerGroundCheck : MonoBehaviour
         // Detect landing
         if (isGrounded)
         {
-            Debug.Log("Player has landed on the ground.");
+            //Debug.Log("Player has landed on the ground.");
             ReenableMovement();
         }
 
