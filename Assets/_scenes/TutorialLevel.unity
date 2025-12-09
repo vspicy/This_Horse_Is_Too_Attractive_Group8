@@ -992,6 +992,7 @@ MonoBehaviour:
   htpMenu: {fileID: 436686564}
   restart: {fileID: 1476131513}
   checkpointRestart: {fileID: 1476131516}
+  time: {fileID: 1097805037}
 --- !u!4 &141194578
 Transform:
   m_ObjectHideFlags: 0
@@ -2542,6 +2543,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099768286}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
       objectReference: {fileID: 1476131522}
@@ -3027,6 +3032,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099768286}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
       objectReference: {fileID: 1476131522}
@@ -3111,6 +3120,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
@@ -4163,6 +4176,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
@@ -6142,6 +6159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099768286}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
       objectReference: {fileID: 1476131522}
@@ -6560,6 +6581,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
@@ -7142,6 +7167,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+--- !u!114 &1312447263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4429619722996745839, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+  m_PrefabInstance: {fileID: 1312447262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b896cdb8142b643b5085a57b914634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1323527775
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,6 +7359,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
@@ -7542,6 +7582,10 @@ PrefabInstance:
       propertyPath: repulsionArrow
       value: 
       objectReference: {fileID: 1099768286}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
@@ -11109,6 +11153,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099768286}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
       objectReference: {fileID: 1476131522}
@@ -12379,6 +12427,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099768286}
     - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
+      propertyPath: testAttraction
+      value: 
+      objectReference: {fileID: 1312447263}
+    - target: {fileID: 6422126176420722785, guid: f724b17d10a532c409ce498dcfbd5531, type: 3}
       propertyPath: repulsionTransform
       value: 
       objectReference: {fileID: 1476131522}
@@ -12718,7 +12770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139395085}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.33355403, y: -0.0000038831713, z: -0.0000013739311, w: 0.942731}
+  m_LocalRotation: {x: -0.333554, y: -0.0000038419303, z: -0.0000013593392, w: 0.942731}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

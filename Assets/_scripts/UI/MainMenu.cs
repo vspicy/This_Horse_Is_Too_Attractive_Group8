@@ -42,6 +42,16 @@ public class MainMenu : MonoBehaviour
 
     public void SwitchScene3()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
+    }
+
+    public void SwitchScene4()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void SwitchScene5()
+    {
+        SceneManager.LoadScene(5);
     }
 }
