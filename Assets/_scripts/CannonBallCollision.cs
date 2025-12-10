@@ -5,12 +5,14 @@ using UnityEngine;
 public class CannonBallCollision : MonoBehaviour
 {
     public RepulsionTransform repulsionTransform;
+    public Movement playerMovement;
+    private TestAttraction[] allTestAttractions;
     public GameObject cannonBallPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        allTestAttractions = FindObjectsOfType<TestAttraction>();
     }
 
     // Update is called once per frame
@@ -24,17 +26,22 @@ public class CannonBallCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("CannonBall"))
         {
             print("Player has hit cannon ball");
-            MovementManagement();
+            DisableScripts();
+            Invoke("EnableScripts", 1f);
         }
     }
 
-    private void MovementManagement()
+    private void DisableScripts()
     {
         repulsionTransform.enabled = false;
+        playerMovement.enabled = false;
+        foreach (var t in allTestAttractions) t.enabled = false;
     }
 
-    private void TurnOnMovement()
+    private void EnableScripts()
     {
-        repulsionTransform.enabled = true;
+        print("movement enabled");
+        playerMovement.enabled = true;
+        foreach (var t in allTestAttractions) t.enabled = true;
     }
 }

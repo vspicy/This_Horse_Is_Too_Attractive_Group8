@@ -6,6 +6,7 @@ public class RepulsionTransform : MonoBehaviour
 {
     private float moveSpeed = 2;
     public Transform playerTransform;
+    public GameObject thirdPresonCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,25 +25,25 @@ public class RepulsionTransform : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             //playerTransform.localPosition += Vector3.left * moveSpeed * Time.deltaTime;
-            playerTransform.Translate(Vector3.left * moveSpeed * Time.deltaTime, Space.Self);
+            playerTransform.Translate(Vector3.left * moveSpeed * Time.deltaTime, thirdPresonCamera.transform);
         }
 
         if (Input.GetKey(KeyCode.W))
         {
             //playerTransform.localPosition += Vector3.forward * moveSpeed * Time.deltaTime;
-            playerTransform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.Self);
+            playerTransform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, thirdPresonCamera.transform);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             //playerTransform.localPosition += Vector3.back * moveSpeed * Time.deltaTime;
-            playerTransform.Translate(Vector3.back * moveSpeed * Time.deltaTime, Space.Self);
+            playerTransform.Translate(Vector3.back * moveSpeed * Time.deltaTime, thirdPresonCamera.transform);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             //playerTransform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            playerTransform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.Self);
+            playerTransform.Translate(Vector3.right * moveSpeed * Time.deltaTime, thirdPresonCamera.transform);
         }
 
         if (Input.GetKey(KeyCode.Space))
