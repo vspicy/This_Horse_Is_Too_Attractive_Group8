@@ -31,7 +31,6 @@ public class CannonBallCollision : MonoBehaviour
     private void MovementManagement()
     {
         repulsionTransform.enabled = false;
-        Invoke("TurnOnMovement", 1);
     }
 
     private void TurnOnMovement()
