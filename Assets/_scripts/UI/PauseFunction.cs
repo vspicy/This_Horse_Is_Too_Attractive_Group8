@@ -18,6 +18,7 @@ public class PauseFunction : MonoBehaviour
     // Get reference to these two scripts right here to prevent certain inputs
     [SerializeField] private RestartLevel restart;
     [SerializeField] private FallFromWorld checkpointRestart;
+    [SerializeField] private Timer time;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class PauseFunction : MonoBehaviour
         // While paused, the player cannot restart
         restart.enabled = false;
         checkpointRestart.enabled = false;
+        time.enabled = false;
 
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
@@ -65,6 +67,7 @@ public class PauseFunction : MonoBehaviour
         // While unpaused, the player can restart
         restart.enabled = true;
         checkpointRestart.enabled = true;
+        time.enabled = true;
 
         Time.timeScale = 1;
         pauseMenu.SetActive(false);

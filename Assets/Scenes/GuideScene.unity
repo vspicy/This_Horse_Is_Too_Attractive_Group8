@@ -1306,28 +1306,31 @@ MonoBehaviour:
 
     L-Shift: Sprint
 
-
-    Hold Left Mouse
-    (When near Magnet): Attract
-
-    Hold Right Mouse (When near Magnet): Charge
-    Repel
+    L-Ctrl + Space(While
+    Repulsion Charged): Move Down/Up
 
 
-    When Magnet on Head Turns Red: Repulsion Fully Charged
+    Hold Left Mouse (When near Magnet): Attract
 
-    Release
-    Right Mouse When Fully Charged: Repel
+    Hold
+    Right Mouse (When near Magnet): Charge Repel
+
+
+    When Magnet on Head Turns
+    Red: Repulsion Fully Charged
+
+    Release Right Mouse When Fully Charged: Repel
 
 
 
-    - You can stop your attraction mid-flight
-    to "swing" with your momentum
+    -
+    You can stop your attraction mid-flight to "swing" with your momentum
 
-    - You cannot attract and repel at the same
-    time
+    -
+    You cannot attract and repel at the same time
 
-    - Magnets grow stronger as you get closer to them'
+    - Magnets grow stronger as
+    you get closer to them'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
