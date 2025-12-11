@@ -29,7 +29,7 @@ public class TestAttraction : MonoBehaviour
         magneticObject.material.color = magnetColor;
     }
 
-    // On player exit, change InRange boolean to true
+    // On player exit, change InRange boolean to true and update some various other variables and scripts
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -42,7 +42,7 @@ public class TestAttraction : MonoBehaviour
         }
     }
 
-    // On player exit, change InRange boolean to false
+    // On player exit, change InRange boolean to false and update some various other variables and scripts
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -57,7 +57,7 @@ public class TestAttraction : MonoBehaviour
 
     void Update()
     {
-        //Run Attract if mouse 0 is held down
+        //Run Attract if left click is held down
         if (Input.GetKey(KeyCode.Mouse0) && playerInRange == true)
         {
             print("Attract");

@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: [Bose, Hayden]
+ * Creation Date: [12-9-2025]
+ * Summary: This script handles the cannon logic
+ */
 public class Cannon : MonoBehaviour
 {
     public Transform firePoint;
@@ -13,6 +18,7 @@ public class Cannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Run "Cannon Shoot at cannonFireRate
         InvokeRepeating("CannonShoot", 0, cannonFireRate);
     }
 
@@ -22,6 +28,7 @@ public class Cannon : MonoBehaviour
         
     }
 
+    //Instantiate CannonBallPrefab and launch it towards firePoint
     private void CannonShoot()
     {
         GameObject CannonBall = Instantiate(cannonBallPrefab, firePoint.position, Quaternion.identity);

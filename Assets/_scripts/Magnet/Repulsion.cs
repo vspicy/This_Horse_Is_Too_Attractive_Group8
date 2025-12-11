@@ -35,8 +35,8 @@ public class Repulsion : MonoBehaviour
 
     [Header("Color Manager")]
     [SerializeField]
-    private Renderer magneticObject; // Reference to Object X
-    private Color magnetColor = new Color(0.20f, 0.20f, 0.20f); // Reference to color
+    private Renderer magneticObject; 
+    private Color magnetColor = new Color(0.20f, 0.20f, 0.20f);
 
     void Start()
     {
@@ -48,18 +48,18 @@ public class Repulsion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // On player exit, change InRange boolean to true
+        // Sets various different variables and scripts upon entering magnet range
         if (other.CompareTag("Player"))
         {
             playerRB = other.GetComponent<Rigidbody>();
-            playerMovement = other.GetComponent<Movement>(); // Get the Movement script
+            playerMovement = other.GetComponent<Movement>();
             print("Player has entered range");
             playerInRange = true;
             magneticObject.material.color = Color.gray;
         }
     }
 
-    // On player exit, change InRange boolean to false
+    // On player exit, change the status of different various variables and scripts
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

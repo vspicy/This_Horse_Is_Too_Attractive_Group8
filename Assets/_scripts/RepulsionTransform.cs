@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: [Bose, Hayden]
+ * Creation Date: [12-4-2025]
+ * Summary: This script handles the repulsion mechanic for the player, where the player can charge up and repel themselves off magnetic surfaces
+ */
 public class RepulsionTransform : MonoBehaviour
 {
     private float moveSpeed = 2;
@@ -20,6 +25,7 @@ public class RepulsionTransform : MonoBehaviour
         print("Transform Active");
     }
 
+    // When WASD/Space/Ctrl is pressed, slowly move the player based on direction of pressed key and the rotation of the camera
     private void Move()
     {
         if (Input.GetKey(KeyCode.A))
