@@ -1300,37 +1300,37 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD + Space + Shift: Move and Jump and Sprint
+  m_text: 'WASD: Move
 
-    Hold Left Mouse: Attract
+    Space: Jump
+
+    L-Shift: Sprint
+
+    L-Ctrl + Space(While
+    Repulsion Charged): Move Down/Up
+
+
+    Hold Left Mouse (When near Magnet): Attract
 
     Hold
-    Right Mouse: Charge Repel
+    Right Mouse (When near Magnet): Charge Repel
 
-    When Magnet on Head Turns Red: Repulsion Fully
-    Charged
+
+    When Magnet on Head Turns
+    Red: Repulsion Fully Charged
 
     Release Right Mouse When Fully Charged: Repel
 
-    Press R: Restart
-    Level
-
-    Green Spheres: Checkpoints
-
-    Blue Magnets: Only Attract
-
-    Red
-    Magnets: Only Repulse
 
 
-    Additional Info:
+    -
+    You can stop your attraction mid-flight to "swing" with your momentum
 
-    While charging the repulsion
-    mechanic you cannot attract. The closer you are to the magnet the stronger the
-    repulse effect will be. There is a timer at the top and a death counter at the
-    bottom left. While there is no time limit, try to see how fast you can get to
-    the end while trying to keep as little deaths as possible. Don''t forget to Have
-    Fun!'
+    -
+    You cannot attract and repel at the same time
+
+    - Magnets grow stronger as
+    you get closer to them'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
