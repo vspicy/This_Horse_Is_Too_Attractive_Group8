@@ -30,6 +30,7 @@ public class Repulsion : MonoBehaviour
 
     private PlayerBehaviour playerBehaviour;
     public TestAttraction testAttraction;
+    private TestAttraction[] allTestAttractions;
     public RepulsionTransform repulsionTransform;
 
     [Header("Color Manager")]
@@ -40,6 +41,7 @@ public class Repulsion : MonoBehaviour
     void Start()
     {
         playerInRange = false;
+        allTestAttractions = FindObjectsOfType<TestAttraction>();
         repulsionTransform.enabled = false;
         playerBehaviour = FindObjectOfType<PlayerBehaviour>();
     }
@@ -65,6 +67,7 @@ public class Repulsion : MonoBehaviour
             playerRB.useGravity = true;
             playerBehaviour.enabled = true;
             testAttraction.enabled = true;
+            foreach (var t in allTestAttractions) t.enabled = true;
             repulsionTransform.enabled = false;
             repulsionArrow.SetActive(false);
             playerInRange = false;
@@ -106,6 +109,7 @@ public class Repulsion : MonoBehaviour
             playerMovement.enabled = false;
             playerBehaviour.enabled = false;
             testAttraction.enabled = false;
+            foreach (var t in allTestAttractions) t.enabled = false;
             repulsionArrow.SetActive(true);
             UpdateArrowDirection();
 
@@ -134,6 +138,7 @@ public class Repulsion : MonoBehaviour
             playerMovement.enabled = true;
             playerBehaviour.enabled = true;
             testAttraction.enabled = true;
+            foreach (var t in allTestAttractions) t.enabled = true;
 
             if (repulsionArrow != null)
             {
